@@ -1,0 +1,102 @@
+@import '../../styles/reference.css';
+
+.genres-main {
+  @apply min-h-screen bg-background;
+}
+
+.genres-wrapper {
+  @apply mx-auto max-w-7xl px-4 pb-20 pt-28 lg:px-8;
+}
+
+.genres-header {
+  @apply mb-12;
+}
+
+.genres-title {
+  @apply text-4xl font-black uppercase italic tracking-tighter text-foreground;
+}
+
+.genres-divider {
+  @apply my-4 h-1 w-20 bg-amber-500 rounded-full;
+}
+
+.genres-subtitle {
+  @apply max-w-2xl text-lg text-muted-foreground;
+}
+
+.genres-grid {
+  @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.genre-card-link {
+  @apply block relative aspect-video overflow-hidden rounded-2xl border border-white/10 transition-colors hover:border-amber-500/50;
+}
+
+.genre-card-inner {
+  @apply relative h-full w-full;
+}
+
+.genre-card-image {
+  @apply object-cover transition-transform duration-500;
+}
+
+.genre-card-placeholder {
+  @apply h-full w-full bg-muted;
+}
+
+.genre-card-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300;
+}
+
+.genre-card-title {
+  @apply absolute bottom-6 left-6 text-2xl font-black uppercase italic tracking-tighter text-white transition-all duration-300;
+}
+
+.genre-card-link:hover .genre-card-image {
+  @apply scale-110;
+}
+
+.genre-card-link:hover .genre-card-title {
+  @apply translate-x-2 text-amber-500;
+}
+
+.genre-card-link:hover .genre-card-overlay {
+  @apply opacity-80;
+}
+
+/* Detail Page Styles */
+.genre-detail-main {
+  @apply min-h-screen bg-background;
+}
+
+.genre-detail-wrapper {
+  @apply mx-auto max-w-7xl px-4 pb-20 pt-28 lg:px-8;
+}
+
+.genre-detail-header {
+  @apply mb-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between;
+}
+
+.genre-detail-title-wrap {
+  @apply flex items-center gap-4;
+}
+
+.genre-detail-back-link {
+  @apply flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-foreground transition-colors hover:border-amber-500/30 hover:bg-white/10;
+}
+
+.genre-detail-title {
+  @apply text-4xl font-black uppercase italic tracking-tighter text-foreground;
+}
+
+.genre-detail-grid {
+  @apply grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6;
+}
+
+.genre-detail-load-more {
+  @apply mt-12 flex justify-center;
+}
+
+.genre-detail-load-more-btn {
+  @apply h-12 rounded-xl bg-amber-500 px-8 text-sm font-bold uppercase tracking-wide text-black transition-transform hover:scale-105 active:scale-95 disabled:opacity-50;
+}

@@ -1,0 +1,119 @@
+@import '../../styles/reference.css';
+
+.root {
+  @apply relative h-[60vh] w-full overflow-hidden lg:h-[85vh] bg-[#0a0a0c];
+}
+
+.backdrop {
+  @apply absolute inset-0 transition-all duration-1000 ease-in-out;
+}
+
+.backdropVisible {
+  @apply opacity-100 scale-100;
+}
+
+.backdropHidden {
+  @apply opacity-0 scale-105;
+}
+
+.backdropImage {
+  @apply object-cover object-top;
+}
+
+.overlayBottom {
+  @apply absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent opacity-90;
+}
+
+.overlaySide {
+  @apply absolute inset-0 bg-gradient-to-r from-[#0a0a0c] via-[#0a0a0c]/40 to-transparent opacity-80;
+}
+
+.overlayDim {
+  @apply absolute inset-0 bg-black/20;
+}
+
+.content {
+  @apply absolute inset-0 flex flex-col justify-end px-6 pb-12 lg:px-16 lg:pb-32;
+}
+
+.contentInner {
+  @apply max-w-3xl transition-all duration-700 ease-out;
+}
+
+.contentVisible {
+  @apply opacity-100 translate-y-0;
+}
+
+.contentHidden {
+  @apply opacity-0 translate-y-4;
+}
+
+.logoSection {
+  @apply mb-4 lg:mb-8;
+}
+
+.logoWrapper {
+  @apply relative h-20 w-[200px] sm:h-36 sm:w-[350px] lg:h-48 lg:w-[450px];
+}
+
+.logoImage {
+  @apply object-contain object-left drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] animate-in fade-in zoom-in duration-1000;
+}
+
+.fallbackTitle {
+  @apply text-3xl font-black uppercase italic tracking-tighter text-white sm:text-6xl lg:text-7xl drop-shadow-2xl;
+}
+
+.overview {
+  @apply mt-2 line-clamp-2 text-xs font-medium text-white/70 sm:text-lg lg:mt-6 lg:max-w-xl lg:line-clamp-3 drop-shadow-md;
+}
+
+.actions {
+  @apply mt-6 flex items-center gap-2 sm:gap-3 lg:mt-8 lg:gap-4;
+}
+
+.watchButton {
+  @apply flex items-center gap-2 sm:gap-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 px-5 py-2.5 sm:px-8 sm:py-3.5 text-[10px] sm:text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 hover:from-amber-400 hover:to-orange-500 active:scale-95 shadow-[0_0_20px_rgba(249,115,22,0.2)];
+}
+
+.detailsButton {
+  @apply flex items-center gap-2 sm:gap-3 rounded-full bg-white/10 px-5 py-2.5 sm:px-8 sm:py-3.5 text-[10px] sm:text-sm font-black uppercase tracking-widest text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95 border border-white/10;
+}
+
+.buttonIcon {
+  @apply h-4 w-4 sm:h-5 sm:w-5;
+}
+
+.playIcon {
+  @apply fill-current;
+}
+
+.indicators {
+  @apply absolute bottom-10 left-6 flex items-center gap-3 lg:left-16;
+}
+
+.indicator {
+  @apply relative h-1.5 transition-all duration-500 rounded-full overflow-hidden;
+}
+
+.indicatorActive {
+  @apply w-12 bg-amber-500;
+}
+
+.indicatorInactive {
+  @apply w-6 bg-white/20 hover:bg-white/40;
+}
+
+.indicatorProgress {
+  @apply absolute inset-0 bg-white/20;
+  animation: progress 5s linear;
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -1,0 +1,6 @@
+.turnstile-captcha-container {
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

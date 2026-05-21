@@ -1,0 +1,29 @@
+@import '../../styles/reference.css';
+
+.main {
+  @apply min-h-screen bg-background;
+}
+
+.wrapper {
+  @apply pt-28 pb-20;
+}
+
+.header {
+  @apply px-4 mb-10 lg:px-12 text-left;
+}
+
+.title {
+  @apply text-4xl font-black uppercase italic tracking-tighter text-foreground text-center;
+}
+
+.divider {
+  @apply mt-4 h-1 w-20 bg-gradient-to-r from-amber-400 to-orange-600 rounded-full mx-auto;
+}
+
+.subtitle {
+  @apply mt-4 text-sm text-muted-foreground text-center;
+}
+
+.content {
+  @apply px-4 lg:px-12;
+}

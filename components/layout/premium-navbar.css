@@ -1,0 +1,213 @@
+@import '../../styles/reference.css';
+
+.premium-navbar-nav {
+  @apply fixed left-1/2 -translate-x-1/2 z-[999] transition-all duration-500 ease-in-out w-[95%] lg:w-full lg:max-w-screen-2xl px-4;
+}
+
+.premium-navbar-nav-default {
+  @apply top-6;
+}
+
+.premium-navbar-nav-scrolled {
+  @apply top-4;
+}
+
+.premium-navbar-inner {
+  @apply relative flex items-center justify-between px-6 py-2 rounded-full border border-white/10 bg-transparent backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-500;
+}
+
+.premium-navbar-inner-default {
+  @apply py-2.5;
+}
+
+.premium-navbar-inner-scrolled {
+  @apply py-1.5 shadow-[0_8px_32px_rgba(0,0,0,0.8)];
+}
+
+.premium-navbar-left-group {
+  @apply flex items-center gap-8;
+}
+
+.premium-navbar-logo-link {
+  @apply flex items-center gap-2 flex-shrink-0;
+}
+
+.premium-navbar-logo-text {
+  @apply text-xl lg:text-2xl font-black tracking-tighter text-white uppercase italic transition-transform;
+}
+
+.premium-navbar-logo-link:hover .premium-navbar-logo-text {
+  transform: scale(1.05);
+}
+
+.premium-navbar-logo-accent {
+  @apply text-amber-500;
+}
+
+.premium-navbar-nav-links-desktop {
+  @apply hidden lg:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/5;
+}
+
+.premium-navbar-nav-link {
+  @apply relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-full;
+}
+
+.premium-navbar-nav-link-active {
+  @apply text-white bg-white/10 shadow-[0_0_20px_rgba(255,255,255,0.05)] font-bold;
+}
+
+.premium-navbar-nav-link-inactive {
+  @apply text-white/60 hover:text-white hover:bg-white/5;
+}
+
+.premium-navbar-nav-link-text {
+  @apply relative z-10;
+}
+
+.premium-navbar-nav-link-indicator-active {
+  @apply absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-5 h-[2px] bg-orange-500 rounded-full shadow-[0_0_10px_#f97316] animate-in fade-in zoom-in duration-500;
+}
+
+.premium-navbar-nav-link-indicator-hover {
+  @apply absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-white/20 rounded-full transition-all duration-300;
+}
+
+.premium-navbar-nav-link:hover .premium-navbar-nav-link-indicator-hover {
+  width: 0.75rem;
+}
+
+.premium-navbar-right-side {
+  @apply flex items-center gap-3;
+}
+
+.premium-navbar-search-desktop {
+  @apply relative hidden md:block;
+}
+
+.premium-navbar-search-form {
+  @apply relative;
+}
+
+.premium-navbar-search-icon {
+  @apply absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400;
+}
+
+.premium-navbar-search-input {
+  @apply w-40 xl:w-56 rounded-full border border-white/10 bg-white/5 pl-9 pr-4 py-1.5 text-sm text-white placeholder:text-gray-500 backdrop-blur-md focus:border-amber-500/50 focus:outline-none transition-all focus:bg-white/10;
+}
+
+.premium-navbar-search-mobile {
+  @apply md:hidden;
+}
+
+.premium-navbar-search-mobile-open {
+  @apply flex items-center gap-2 animate-in slide-in-from-right-2 duration-300;
+}
+
+.premium-navbar-search-mobile-input {
+  @apply w-32 rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-sm text-white focus:outline-none;
+}
+
+.premium-navbar-search-close-btn {
+  @apply text-white/60 hover:text-white p-1;
+}
+
+.premium-navbar-search-open-btn {
+  @apply text-white/60 hover:text-white p-2 hover:bg-white/5 rounded-full transition-all;
+}
+
+.premium-navbar-icon-md {
+  @apply h-5 w-5;
+}
+
+.premium-navbar-user-menu {
+  @apply relative;
+}
+
+.premium-navbar-avatar-btn {
+  @apply relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-transparent transition-all hover:ring-amber-500/50 shadow-lg;
+}
+
+.premium-navbar-avatar-img {
+  @apply h-full w-full object-cover;
+}
+
+.premium-navbar-dropdown {
+  @apply absolute right-0 top-full mt-4 w-56 overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c0e]/95 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] animate-in fade-in slide-in-from-top-2 duration-300;
+}
+
+.premium-navbar-dropdown-header {
+  @apply border-b border-white/5 p-4;
+}
+
+.premium-navbar-dropdown-username {
+  @apply text-sm font-black uppercase italic tracking-tight;
+}
+
+.premium-navbar-dropdown-email {
+  @apply text-xs text-muted-foreground;
+}
+
+.premium-navbar-admin-badge {
+  @apply mt-1 inline-block rounded bg-amber-600/30 px-1.5 py-0.5 text-[10px] font-semibold text-amber-300;
+}
+
+.premium-navbar-dropdown-actions {
+  @apply p-1.5;
+}
+
+.premium-navbar-dropdown-btn {
+  @apply flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-foreground/80 transition-all hover:bg-white/5;
+}
+
+.premium-navbar-dropdown-admin-link {
+  @apply flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-amber-400 transition-all hover:bg-white/5;
+}
+
+.premium-navbar-dropdown-logout-btn {
+  @apply flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-red-400 transition-all hover:bg-white/5;
+}
+
+.premium-navbar-dropdown-icon {
+  @apply h-4 w-4;
+}
+
+.premium-navbar-login-btn {
+  @apply flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 px-4 py-1.5 lg:py-2 text-sm font-bold text-white transition-all hover:from-amber-400 hover:to-orange-500 hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] hover:scale-105 active:scale-95;
+}
+
+.premium-navbar-login-btn-text {
+  @apply hidden sm:inline;
+}
+
+.premium-navbar-mobile-menu-toggle {
+  @apply lg:hidden p-2 text-white/60 hover:text-white hover:bg-white/5 rounded-full transition-all;
+}
+
+.premium-navbar-icon-lg {
+  @apply h-6 w-6;
+}
+
+.premium-navbar-mobile-menu {
+  @apply mt-2 overflow-hidden rounded-3xl border border-white/10 bg-[#0c0c0e]/95 backdrop-blur-xl lg:hidden animate-in slide-in-from-top-4 duration-300;
+}
+
+.premium-navbar-mobile-menu-inner {
+  @apply flex flex-col gap-1 px-4 py-4;
+}
+
+.premium-navbar-mobile-nav-link {
+  @apply flex items-center justify-between rounded-xl px-4 py-3 text-sm transition-all duration-300;
+}
+
+.premium-navbar-mobile-nav-link-active {
+  @apply bg-white/10 text-white font-bold;
+}
+
+.premium-navbar-mobile-nav-link-inactive {
+  @apply text-white/60 hover:bg-white/5 hover:text-white;
+}
+
+.premium-navbar-mobile-nav-dot {
+  @apply h-1.5 w-1.5 rounded-full bg-orange-500 shadow-[0_0_8px_#f97316];
+}

@@ -1,0 +1,110 @@
+@import '../../styles/reference.css';
+
+.source-picker {
+  @apply flex h-full flex-col gap-4 rounded-2xl border border-white/10 bg-black/50 p-4 backdrop-blur-xl;
+}
+
+.source-picker-compact {
+  @apply rounded-none border-0 bg-transparent p-0 backdrop-blur-none;
+}
+
+.source-picker-header {
+  @apply space-y-1 px-1;
+}
+
+.source-picker-title {
+  @apply text-xs font-black uppercase tracking-[0.2em] text-white/50;
+}
+
+.source-picker-subtitle {
+  @apply text-sm font-semibold text-white;
+}
+
+.source-picker-list {
+  @apply flex flex-1 flex-col gap-2 overflow-y-auto;
+}
+
+.source-picker-item {
+  @apply relative flex w-full items-center gap-3 rounded-xl border border-white/5 bg-white/[0.03] px-3 py-3 text-left transition-all hover:border-white/15 hover:bg-white/[0.06];
+}
+
+.source-picker-item-active {
+  @apply border-amber-500/40 bg-amber-500/10 shadow-[0_0_24px_rgba(245,158,11,0.15)];
+}
+
+.source-picker-item-icon-wrap {
+  @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 text-amber-400;
+}
+
+.source-picker-item-active .source-picker-item-icon-wrap {
+  @apply bg-amber-500/20 text-amber-300;
+}
+
+.source-picker-item-icon {
+  @apply h-4 w-4;
+}
+
+.source-picker-item-copy {
+  @apply min-w-0 flex-1;
+}
+
+.source-picker-item-top {
+  @apply flex items-center gap-2;
+}
+
+.source-picker-item-label {
+  @apply text-sm font-bold text-white;
+}
+
+.source-picker-item-badge {
+  @apply rounded-full px-2 py-0.5 text-[10px] font-black uppercase tracking-wide;
+}
+
+.source-picker-item-badge-vf {
+  @apply bg-sky-500/15 text-sky-300;
+}
+
+.source-picker-item-badge-vostfr {
+  @apply bg-orange-500/15 text-orange-300;
+}
+
+.source-picker-item-badge-multi {
+  @apply bg-violet-500/15 text-violet-300;
+}
+
+.source-picker-item-desc {
+  @apply mt-0.5 block truncate text-[11px] text-white/45;
+}
+
+.source-picker-item-tag {
+  @apply shrink-0 rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[9px] font-black uppercase tracking-wider text-white/50;
+}
+
+@media (max-width: 1023px) {
+  .source-picker {
+    @apply h-auto rounded-none border-0 border-t border-white/10 bg-black/80 p-3;
+  }
+
+  .source-picker-header {
+    @apply hidden;
+  }
+
+  .source-picker-list {
+    @apply flex-row overflow-x-auto pb-1;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .source-picker-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .source-picker-item {
+    @apply min-w-[220px] shrink-0;
+  }
+
+  .source-picker-item-desc,
+  .source-picker-item-tag {
+    @apply hidden;
+  }
+}

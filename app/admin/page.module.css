@@ -1,0 +1,221 @@
+@import '../../styles/reference.css';
+
+.main {
+  @apply min-h-screen bg-background;
+}
+
+.loadingMain {
+  @apply flex min-h-screen items-center justify-center bg-background;
+}
+
+.loader {
+  @apply h-10 w-10 animate-spin text-amber-500;
+}
+
+.container {
+  @apply mx-auto max-w-7xl pt-28 pb-20 px-4 lg:px-8;
+}
+
+.header {
+  @apply mb-10;
+}
+
+.headerRow {
+  @apply flex items-center gap-3;
+}
+
+.iconWrap {
+  @apply flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10;
+}
+
+.headerIcon {
+  @apply h-5 w-5 text-amber-500;
+}
+
+.title {
+  @apply text-4xl font-black uppercase italic tracking-tighter text-foreground;
+}
+
+.subtitle {
+  @apply mt-2 text-sm text-muted-foreground;
+}
+
+.statsGrid {
+  @apply mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3;
+}
+
+.statCard {
+  @apply flex items-center gap-4 rounded-2xl border border-white/5 bg-card p-6;
+}
+
+.statIconWrap {
+  @apply rounded-xl bg-white/5 p-3;
+}
+
+.statIconBlue {
+  @apply text-blue-400;
+}
+
+.statIconAmber {
+  @apply text-amber-400;
+}
+
+.statIconGreen {
+  @apply text-green-400;
+}
+
+.statIconPurple {
+  @apply text-purple-400;
+}
+
+.statIconPink {
+  @apply text-pink-400;
+}
+
+.statIconCyan {
+  @apply text-cyan-400;
+}
+
+.statIcon {
+  @apply h-6 w-6;
+}
+
+.statValue {
+  @apply text-3xl font-black text-foreground;
+}
+
+.statLabel {
+  @apply text-sm text-muted-foreground;
+}
+
+.tableCard {
+  @apply rounded-2xl border border-white/5 bg-card overflow-hidden;
+}
+
+.tableHeader {
+  @apply border-b border-white/5 px-6 py-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between;
+}
+
+.tableTitle {
+  @apply text-lg font-bold text-foreground;
+}
+
+.tableLoading {
+  @apply flex items-center justify-center py-16;
+}
+
+.tableLoader {
+  @apply h-8 w-8 animate-spin text-amber-500;
+}
+
+.tableScroll {
+  @apply overflow-x-auto;
+}
+
+.table {
+  @apply w-full;
+}
+
+.tableHeadRow {
+  @apply border-b border-white/5 text-left;
+}
+
+.tableHeadCell {
+  @apply px-6 py-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground;
+}
+
+.tableBody {
+  @apply divide-y divide-white/5;
+}
+
+.tableRow {
+  @apply transition-colors hover:bg-white/3;
+}
+
+.tableCell {
+  @apply px-6 py-4;
+}
+
+.username {
+  @apply text-sm font-black uppercase italic;
+}
+
+.cellMuted {
+  @apply text-sm text-muted-foreground;
+}
+
+.roleBadge {
+  @apply inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold;
+}
+
+.roleBadgeAdmin {
+  @apply bg-amber-600/20 text-amber-300;
+}
+
+.roleBadgeUser {
+  @apply bg-white/5 text-muted-foreground;
+}
+
+.actions {
+  @apply flex items-center gap-2;
+}
+
+.actionButton {
+  @apply rounded-lg border border-white/10 p-2 text-muted-foreground transition-all;
+}
+
+.actionButtonDelete {
+  @apply hover:border-red-500/30 hover:text-red-400;
+}
+
+.actionIcon {
+  @apply h-4 w-4;
+}
+
+.selfLabel {
+  @apply text-xs text-muted-foreground italic;
+}
+
+.emptyUsers {
+  @apply py-16 text-center text-muted-foreground;
+}
+
+.alertError {
+  @apply mb-6 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400;
+}
+
+.healthGrid {
+  @apply mb-10 grid grid-cols-1 gap-3 sm:grid-cols-3;
+}
+
+.healthCard {
+  @apply flex items-center gap-3 rounded-xl border border-white/5 bg-card px-4 py-3 text-sm text-muted-foreground;
+}
+
+.healthIcon {
+  @apply h-4 w-4 text-amber-500;
+}
+
+.searchWrap {
+  @apply relative w-full sm:w-72;
+}
+
+.searchIcon {
+  @apply absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground;
+}
+
+.searchInput {
+  @apply w-full rounded-full border border-white/10 bg-white/5 py-2 pl-9 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-amber-500/50 focus:outline-none;
+}
+
+.pagination {
+  @apply flex items-center justify-center gap-4 border-t border-white/5 px-6 py-4;
+}
+
+.paginationBtn {
+  @apply rounded-lg border border-white/10 p-2 text-muted-foreground transition-all hover:border-amber-500/30 hover:text-amber-400 disabled:opacity-40 disabled:hover:border-white/10 disabled:hover:text-muted-foreground;
+}
+
+.paginationText {
+  @apply text-sm text-muted-foreground;
+}

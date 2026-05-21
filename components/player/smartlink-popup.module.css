@@ -1,0 +1,69 @@
+@import '../../styles/reference.css';
+
+.overlay {
+  @apply fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-md p-4;
+}
+
+.card {
+  @apply relative w-full max-w-md overflow-hidden rounded-2xl border border-amber-900/30 bg-card p-8 shadow-2xl;
+}
+
+.content {
+  @apply flex flex-col items-center text-center;
+}
+
+.iconWrap {
+  @apply mb-6 rounded-full bg-amber-500/10 p-4;
+}
+
+.icon {
+  @apply h-12 w-12 text-amber-500;
+}
+
+.title {
+  @apply mb-2 text-2xl font-bold text-foreground;
+}
+
+.description {
+  @apply mb-4 text-sm text-muted-foreground px-4;
+}
+
+.hint {
+  @apply mb-8 text-xs text-amber-500/80 italic;
+}
+
+.stepText {
+  @apply mb-4 text-sm font-medium text-foreground;
+}
+
+.stepHighlight {
+  @apply text-amber-500;
+}
+
+.progressWrap {
+  @apply mb-8 w-full;
+}
+
+.progressTrack {
+  @apply h-2 w-full overflow-hidden rounded-full bg-secondary;
+}
+
+.progressBar {
+  @apply h-full bg-gradient-to-r from-amber-500 to-orange-600 transition-all duration-500;
+}
+
+.actionBtn {
+  @apply flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 py-4 text-lg font-bold text-foreground shadow-lg shadow-amber-900/20 transition-all hover:scale-[1.02] hover:from-amber-400 hover:to-orange-500;
+}
+
+.actionIcon {
+  @apply h-6 w-6 fill-current;
+}
+
+.actionArrow {
+  @apply h-6 w-6 transition-transform;
+}
+
+.actionBtn:hover .actionArrow {
+  transform: translateX(0.25rem);
+}

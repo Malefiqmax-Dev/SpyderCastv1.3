@@ -1,0 +1,69 @@
+@import '../../styles/reference.css';
+
+.section {
+  @apply py-6;
+}
+
+.title {
+  @apply mb-2 px-4 text-xl font-bold lg:px-8;
+  color: var(--foreground);
+}
+
+.divider {
+  @apply mb-4 mx-4 lg:mx-8 h-1 w-16 rounded-full bg-gradient-to-r from-amber-500 to-orange-600;
+}
+
+.rowGroup {
+  @apply relative;
+}
+
+.scrollButton {
+  @apply absolute top-1/2 z-20 -translate-y-1/2 rounded-full bg-amber-900/70 p-2 text-white opacity-0 backdrop-blur-sm transition-opacity hover:bg-amber-800/80;
+}
+
+.rowGroup:hover .scrollButton {
+  @apply opacity-100;
+}
+
+.scrollButtonLeft {
+  @apply left-0;
+}
+
+.scrollButtonRight {
+  @apply right-0;
+}
+
+.chevronIcon {
+  @apply h-6 w-6;
+}
+
+.scrollTrack {
+  @apply flex gap-6 overflow-x-auto px-4 pt-10 pb-12 snap-x lg:px-8;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  @apply relative flex min-w-[220px] flex-none snap-start items-end pt-10;
+}
+
+.rankWrapper {
+  @apply absolute left-[-10px] bottom-[-15px] z-10 select-none;
+}
+
+.rankNumber {
+  font-size: 140px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
+}
+
+.cardWrapper {
+  @apply ml-12 w-[190px];
+}

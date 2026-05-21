@@ -1,0 +1,132 @@
+@import '../../styles/reference.css';
+@import "plyr/dist/plyr.css";
+
+.root {
+  @apply fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-md p-3 lg:p-6;
+}
+
+.root :global(.plyr) {
+  width: 100%;
+  height: 100%;
+}
+
+.shell {
+  @apply relative flex h-full w-full max-h-[95vh] max-w-[1400px] flex-col overflow-hidden rounded-2xl border border-amber-900/30 bg-card shadow-2xl;
+}
+
+.header {
+  @apply z-50 flex items-center justify-between border-b border-white/5 bg-black/70 px-4 py-3 backdrop-blur-md;
+}
+
+.headerCopy {
+  @apply min-w-0 flex flex-col gap-1;
+}
+
+.title {
+  @apply truncate text-sm font-bold text-white;
+}
+
+.activeSourceBadge {
+  @apply inline-flex w-fit rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-amber-300;
+}
+
+.closeBtn {
+  @apply rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-amber-600;
+}
+
+.iconMd {
+  @apply h-5 w-5;
+}
+
+.playerArea {
+  @apply min-h-0 flex-1 bg-black;
+}
+
+.verifiedLayout {
+  @apply grid h-full min-h-0 grid-rows-[1fr_auto] lg:grid-cols-[1fr_320px] lg:grid-rows-1;
+}
+
+.mediaColumn {
+  @apply flex min-h-0 flex-col;
+}
+
+.warningBanner {
+  @apply flex items-center gap-2 border-b border-amber-500/20 bg-amber-500/10 px-4 py-2 text-xs text-amber-200;
+}
+
+.warningIcon {
+  @apply h-4 w-4 shrink-0;
+}
+
+.videoWrapper {
+  @apply relative min-h-0 flex-1 bg-black;
+}
+
+.plyrVideo {
+  width: 100%;
+  height: 100%;
+}
+
+.sourcesAside {
+  @apply min-h-0 border-white/10 lg:border-l lg:p-4;
+}
+
+.unavailableState {
+  @apply flex h-full flex-col items-center justify-center gap-3 p-8 text-center text-sm text-white/70;
+}
+
+.unavailableIcon {
+  @apply h-10 w-10 text-amber-500;
+}
+
+.unavailableHint {
+  @apply text-xs text-white/45;
+}
+
+.verifyLayout {
+  @apply relative flex h-full flex-col items-center justify-center p-8;
+}
+
+.backdropImage {
+  @apply object-cover opacity-20;
+}
+
+.verifyContent {
+  @apply relative z-10 max-w-lg text-center;
+}
+
+.shieldIcon {
+  @apply mx-auto mb-6 h-16 w-16 text-amber-500;
+}
+
+.verifyTitle {
+  @apply mb-4 text-2xl font-black uppercase italic tracking-tighter text-white;
+}
+
+.verifyText {
+  @apply mb-8 px-4 text-sm text-foreground/70;
+}
+
+.errorBox {
+  @apply mx-auto mb-6 flex max-w-sm items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/10 p-4 text-xs text-red-500;
+}
+
+.errorIcon {
+  @apply h-4 w-4;
+}
+
+.turnstileWrap {
+  @apply flex min-h-[65px] justify-center;
+}
+
+.loadingWrap {
+  @apply flex flex-col items-center gap-3 py-6;
+}
+
+.loadingIcon {
+  @apply h-8 w-8 animate-spin text-amber-500;
+}
+
+.loadingText {
+  @apply text-xs font-medium uppercase tracking-widest text-amber-500;
+}

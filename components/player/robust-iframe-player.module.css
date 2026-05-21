@@ -1,0 +1,9 @@
+@import '../../styles/reference.css';
+
+.iframe {
+  @apply w-full h-full;
+}
+
+.placeholder {
+  @apply w-full h-full;
+}

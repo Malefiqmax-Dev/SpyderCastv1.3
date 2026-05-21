@@ -1,0 +1,2 @@
+cd "c:\Users\Paul\Desktop\0 Business\0 SpyderCastv2"
+npm run build

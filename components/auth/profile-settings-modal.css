@@ -1,0 +1,78 @@
+@import '../../styles/reference.css';
+@import '../auth/profile-icon-picker.css';
+
+.profile-modal-overlay {
+  @apply fixed inset-0 z-[110] flex items-center justify-center bg-black/80 p-4 backdrop-blur-md;
+}
+
+.profile-modal-card {
+  @apply relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/10 bg-[#0c0c0e] p-6 shadow-2xl sm:p-8;
+}
+
+.profile-modal-close {
+  @apply absolute right-4 top-4 text-muted-foreground transition-colors hover:text-foreground;
+}
+
+.profile-modal-close-icon {
+  @apply h-5 w-5;
+}
+
+.profile-modal-header {
+  @apply mb-6;
+}
+
+.profile-modal-title {
+  @apply text-2xl font-black uppercase italic tracking-tight text-white;
+}
+
+.profile-modal-title-accent {
+  @apply text-amber-500;
+}
+
+.profile-modal-subtitle {
+  @apply mt-1 text-sm text-muted-foreground;
+}
+
+.profile-modal-preview {
+  @apply mb-6 flex items-center gap-4 rounded-2xl border border-white/5 bg-white/5 p-4;
+}
+
+.profile-modal-preview-name {
+  @apply text-xl font-black;
+}
+
+.profile-modal-preview-email {
+  @apply text-sm text-muted-foreground;
+}
+
+.profile-modal-error {
+  @apply mb-4 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm text-red-400;
+}
+
+.profile-modal-form {
+  @apply space-y-6;
+}
+
+.profile-modal-field {
+  @apply space-y-2;
+}
+
+.profile-modal-label {
+  @apply flex items-center gap-2 text-xs font-black uppercase tracking-widest text-muted-foreground;
+}
+
+.profile-modal-label-icon {
+  @apply h-3 w-3;
+}
+
+.profile-modal-input {
+  @apply w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm focus:border-amber-500/50 focus:outline-none;
+}
+
+.profile-modal-save-btn {
+  @apply flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 py-3 text-sm font-bold text-white transition-all hover:from-amber-400 hover:to-orange-500 disabled:opacity-50;
+}
+
+.profile-modal-save-icon {
+  @apply h-4 w-4 animate-spin;
+}

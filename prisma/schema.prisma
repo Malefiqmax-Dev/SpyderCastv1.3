@@ -1,0 +1,236 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  username     String   @unique
+  email        String   @unique
+  passwordHash String
+  role         String   @default("member")
+  avatar       String?  @default("https://static.crunchyroll.com/assets/avatar/170x170/0011-puck.png")
+  nameColor    String   @default("#ffffff")
+  createdAt    DateTime @default(now())
+  lastSeen     DateTime @default(now())
+  
+  // Collections stored as JSON to match previous structure
+  watchLater   Json     @default("[]")
+  watched      Json     @default("[]")
+  liked        Json     @default("[]")
+
+  contentRequests     ContentRequest[]
+  contentRequestVotes ContentRequestVote[]
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  movieId   String
+  content   String   @db.Text
+  user      Json     // Snapshot of user info
+  createdAt DateTime @default(now())
+}
+
+model Media {
+  id        String   @id @default(uuid())
+  tmdbId    Int      @unique
+  type      String   // "movie" or "tv"
+  title     String
+  data      Json     // Store full API response or relevant fields
+  updatedAt DateTime @default(now())
+}
+
+// --- NEW MODELS ---
+
+model Movie {
+  id        String        @id // "mov_xxx"
+  tmdbId    Int           @unique
+  title     String
+  year      Int?
+  poster    String?       @db.Text
+  sources   MovieSource[]
+  addedAt   DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model MovieSource {
+  id        String   @id @default(uuid())
+  movieId   String
+  movie     Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  url       String   @db.Text
+  quality   String?
+  language  String?
+  size      String?
+  sizeBytes BigInt?
+  createdAt DateTime @default(now())
+}
+
+model Series {
+  id           String    @id @default(uuid())
+  tmdbId       Int       @unique
+  title        String
+  seasonCount  Int
+  episodeCount Int
+  episodes     Episode[]
+  updatedAt    DateTime  @updatedAt
+}
+
+model Episode {
+  id            String   @id @default(uuid())
+  seriesId      String
+  series        Series   @relation(fields: [seriesId], references: [id], onDelete: Cascade)
+  season        String   // "S01"
+  episodeNumber Int
+  url           String   @db.Text
+  size          String?
+  language      String
+  createdAt     DateTime @default(now())
+}
+
+model HLSMovie {
+  id        String   @id // "hls_xxx"
+  tmdbId    Int      @unique
+  title     String
+  poster    String?  @db.Text
+  url       String   @db.Text
+  type      String   @default("hls")
+  size      String?
+  sizeBytes BigInt?
+  updatedAt DateTime @updatedAt
+}
+
+model CatalogStats {
+  id          Int      @id @default(1)
+  totalMovies Int
+  totalSeries Int
+  totalHLS    Int
+  updatedAt   DateTime @updatedAt
+}
+
+model ContentRequest {
+  id         String   @id @default(uuid())
+  tmdbId     Int
+  mediaType  String
+  title      String
+  posterPath String?  @db.Text
+  message    String?  @db.Text
+  status     String   @default("pending")
+  adminNote  String?  @db.Text
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reviewedAt DateTime?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  votes      ContentRequestVote[]
+
+  @@unique([tmdbId, mediaType])
+  @@index([status, createdAt])
+}
+
+model ContentRequestVote {
+  id        String         @id @default(uuid())
+  requestId String
+  request   ContentRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime       @default(now())
+
+  @@unique([requestId, userId])
+  @@index([requestId])
+}
+
+model DmcaReport {
+  id          String   @id @default(uuid())
+  name        String   @db.Text
+  email       String   @db.Text
+  workDescription String @db.Text
+  contentUrl  String   @db.Text
+  goodFaith   Boolean
+  accuracy    Boolean
+  signature   String   @db.Text
+  status      String   @default("pending")
+  adminNote   String?  @db.Text
+  reviewedAt  DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([status, createdAt])
+}
+
+model MovieView {
+  id        String   @id @default(uuid())
+  movieId   String
+  movieType String   // "movie", "series", or "hls"
+  tmdbId    Int
+  userId    String?
+  ipAddress String?
+  userAgent String?  @db.Text
+  createdAt DateTime @default(now())
+
+  @@index([movieId, movieType])
+  @@index([tmdbId])
+  @@index([createdAt])
+}
+
+model ApiKey {
+  id          String   @id @default(uuid())
+  name        String
+  key         String   @unique
+  permissions String   @default("read") // "read", "write", "admin"
+  isActive    Boolean  @default(true)
+  lastUsed    DateTime?
+  expiresAt   DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([isActive])
+}
+
+model WatchParty {
+  id          String   @id @default(uuid())
+  hostId      String
+  mediaType   String   // "movie" or "series"
+  tmdbId      Int
+  season      String?  // For series: "S01"
+  episode     Int?     // For series: episode number
+  currentTime Float    @default(0) // Current playback position in seconds
+  isPlaying   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  participants WatchPartyParticipant[]
+  messages    WatchPartyMessage[]
+
+  @@index([hostId])
+  @@index([tmdbId, mediaType])
+}
+
+model WatchPartyParticipant {
+  id          String   @id @default(uuid())
+  watchPartyId String
+  watchParty  WatchParty @relation(fields: [watchPartyId], references: [id], onDelete: Cascade)
+  userId      String
+  username    String
+  avatar      String?
+  joinedAt    DateTime @default(now())
+  lastSync    DateTime @default(now())
+
+  @@unique([watchPartyId, userId])
+  @@index([watchPartyId])
+}
+
+model WatchPartyMessage {
+  id          String   @id @default(uuid())
+  watchPartyId String
+  watchParty  WatchParty @relation(fields: [watchPartyId], references: [id], onDelete: Cascade)
+  userId      String
+  username    String
+  avatar      String?
+  content     String   @db.Text
+  createdAt   DateTime @default(now())
+
+  @@index([watchPartyId, createdAt])
+}

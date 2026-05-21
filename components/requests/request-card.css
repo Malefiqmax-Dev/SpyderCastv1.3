@@ -1,0 +1,117 @@
+@import '../../styles/reference.css';
+
+.request-card {
+  @apply flex gap-4 rounded-2xl border border-white/5 bg-card/60 p-4 transition-colors hover:border-amber-500/20;
+}
+
+.request-card-approved {
+  @apply border-emerald-500/20 bg-emerald-500/5;
+}
+
+.request-card-poster-link {
+  @apply shrink-0;
+}
+
+.request-card-poster-wrap {
+  @apply relative h-36 w-24 overflow-hidden rounded-xl bg-secondary/50;
+}
+
+.request-card-poster {
+  @apply object-cover;
+}
+
+.request-card-no-image {
+  @apply flex h-full w-full items-center justify-center;
+}
+
+.request-card-fallback-icon {
+  @apply h-8 w-8 text-muted-foreground;
+}
+
+.request-card-body {
+  @apply flex min-w-0 flex-1 flex-col gap-3;
+}
+
+.request-card-top {
+  @apply flex items-start justify-between gap-3;
+}
+
+.request-card-title {
+  @apply line-clamp-2 text-base font-bold text-foreground transition-colors hover:text-amber-400;
+}
+
+.request-card-meta {
+  @apply mt-1 text-xs text-muted-foreground;
+}
+
+.request-card-requester {
+  @apply inline-flex items-center gap-2 align-middle;
+}
+
+.request-card-status {
+  @apply shrink-0 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide;
+}
+
+.request-card-status-pending {
+  @apply bg-amber-500/15 text-amber-400;
+}
+
+.request-card-status-approved {
+  @apply bg-emerald-500/15 text-emerald-400;
+}
+
+.request-card-status-rejected {
+  @apply bg-red-500/15 text-red-400;
+}
+
+.request-card-message {
+  @apply line-clamp-2 text-sm italic text-muted-foreground;
+}
+
+.request-card-admin-note {
+  @apply rounded-lg border border-white/5 bg-white/5 px-3 py-2 text-xs text-muted-foreground;
+}
+
+.request-card-footer {
+  @apply mt-auto flex items-center justify-between gap-3;
+}
+
+.request-card-vote-btn {
+  @apply inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-bold text-foreground transition-all hover:border-amber-500/30 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.request-card-vote-btn-active {
+  @apply border-amber-500/40 bg-amber-500/15 text-amber-400;
+}
+
+.request-card-vote-icon {
+  @apply h-4 w-4;
+}
+
+.request-card-vote-spin {
+  @apply animate-spin;
+}
+
+.request-card-date {
+  @apply text-xs text-muted-foreground;
+}
+
+.request-card-admin-actions {
+  @apply flex flex-wrap gap-2 border-t border-white/5 pt-3;
+}
+
+.request-card-admin-btn {
+  @apply rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground transition-colors hover:border-white/20;
+}
+
+.request-card-admin-approve {
+  @apply border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10;
+}
+
+.request-card-admin-reject {
+  @apply border-red-500/20 text-red-400 hover:bg-red-500/10;
+}
+
+.request-card-admin-delete {
+  @apply border-red-500/20 text-red-300 hover:bg-red-500/10;
+}

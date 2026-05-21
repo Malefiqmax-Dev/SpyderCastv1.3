@@ -1,0 +1,108 @@
+@import '../../styles/reference.css';
+
+.root {
+  @apply relative;
+}
+
+.link {
+  @apply block h-full;
+}
+
+.card {
+  @apply relative overflow-hidden rounded-lg shadow-lg border border-white/5;
+  background-color: color-mix(in srgb, var(--secondary) 20%, transparent);
+}
+
+.posterWrapper {
+  @apply relative aspect-[2/3] w-full;
+}
+
+.posterImage {
+  @apply object-cover;
+}
+
+.noImage {
+  @apply flex h-full w-full items-center justify-center;
+  background-color: var(--secondary);
+}
+
+.noImageText {
+  @apply text-sm;
+  color: var(--muted-foreground);
+}
+
+.overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.link:hover .overlay {
+  @apply opacity-100;
+}
+
+.actions {
+  @apply absolute top-2 left-2 flex flex-col gap-2 opacity-0 transition-opacity duration-300;
+}
+
+.link:hover .actions {
+  @apply opacity-100;
+}
+
+.actionButton {
+  @apply rounded-full bg-black/50 p-1.5 backdrop-blur-sm;
+}
+
+.actionButtonWatchLater {
+  @apply hover:bg-amber-500;
+}
+
+.actionButtonWatched {
+  @apply hover:bg-green-500;
+}
+
+.icon {
+  @apply h-4 w-4;
+}
+
+.iconActiveWatchLater {
+  @apply fill-amber-500 text-amber-500;
+}
+
+.iconActiveWatched {
+  @apply fill-green-500 text-green-500;
+}
+
+.iconInactive {
+  @apply text-white;
+}
+
+.info {
+  @apply absolute bottom-0 left-0 right-0 p-3 opacity-0 transition-all duration-300;
+}
+
+.link:hover .info {
+  @apply opacity-100;
+}
+
+.ratingRow {
+  @apply flex items-center gap-1.5 mb-1;
+}
+
+.starIcon {
+  @apply h-3 w-3 fill-amber-500 text-amber-500;
+}
+
+.ratingText {
+  @apply text-[11px] font-bold text-white;
+}
+
+.title {
+  @apply line-clamp-1 text-[11px] font-black uppercase italic tracking-tight text-white;
+}
+
+.year {
+  @apply text-[10px] font-medium text-amber-500/80;
+}
+
+.badge {
+  @apply absolute top-2 right-2 rounded bg-amber-600/90 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-tighter text-white backdrop-blur-sm shadow-xl;
+}

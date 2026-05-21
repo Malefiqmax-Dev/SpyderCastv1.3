@@ -1,0 +1,157 @@
+@import '../../styles/reference.css';
+@import '../../components/auth/profile-icon-picker.css';
+
+.profile-main {
+  @apply min-h-screen bg-background;
+}
+
+.profile-wrapper {
+  @apply mx-auto max-w-6xl px-4 pb-20 pt-28 lg:px-8;
+}
+
+.profile-header {
+  @apply mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between;
+}
+
+.profile-title {
+  @apply text-4xl font-black uppercase italic tracking-tighter text-foreground;
+}
+
+.profile-subtitle {
+  @apply mt-1 text-sm text-muted-foreground;
+}
+
+.profile-header-actions {
+  @apply flex flex-wrap gap-2;
+}
+
+.profile-admin-link,
+.profile-logout-btn {
+  @apply inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-amber-500/30;
+}
+
+.profile-action-icon {
+  @apply h-4 w-4;
+}
+
+.profile-layout {
+  @apply grid gap-6 lg:grid-cols-[320px_1fr];
+}
+
+.profile-card {
+  @apply rounded-2xl border border-white/5 bg-card/50 p-6;
+}
+
+.profile-card-preview {
+  @apply flex flex-col items-center gap-4 text-center;
+}
+
+.profile-preview-info {
+  @apply space-y-2;
+}
+
+.profile-preview-name {
+  @apply text-2xl font-black;
+}
+
+.profile-preview-email,
+.profile-preview-date {
+  @apply flex items-center justify-center gap-2 text-sm text-muted-foreground;
+}
+
+.profile-inline-icon {
+  @apply h-4 w-4;
+}
+
+.profile-stats-grid {
+  @apply grid w-full grid-cols-3 gap-3 pt-2;
+}
+
+.profile-stat {
+  @apply flex flex-col items-center gap-1 rounded-xl border border-white/5 bg-white/5 p-3;
+}
+
+.profile-stat-icon {
+  @apply h-4 w-4 text-amber-400;
+}
+
+.profile-stat span {
+  @apply text-lg font-black text-foreground;
+}
+
+.profile-stat small {
+  @apply text-[10px] uppercase tracking-wide text-muted-foreground;
+}
+
+.profile-section-title {
+  @apply mb-6 text-lg font-bold text-foreground;
+}
+
+.profile-field {
+  @apply mb-6 space-y-2;
+}
+
+.profile-label {
+  @apply flex items-center gap-2 text-xs font-black uppercase tracking-widest text-muted-foreground;
+}
+
+.profile-label-icon {
+  @apply h-3 w-3;
+}
+
+.profile-input {
+  @apply w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm focus:border-amber-500/40 focus:outline-none;
+}
+
+.profile-save-btn {
+  @apply inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 px-4 py-3 text-sm font-bold text-black transition-colors hover:bg-amber-400 disabled:opacity-50;
+}
+
+.profile-save-icon {
+  @apply h-4 w-4;
+}
+
+.profile-save-spin {
+  @apply animate-spin;
+}
+
+.profile-error {
+  @apply mb-4 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300;
+}
+
+.profile-loading,
+.profile-auth-wrap {
+  @apply flex min-h-[60vh] flex-col items-center justify-center px-4 text-center;
+}
+
+.profile-loader {
+  @apply h-8 w-8 animate-spin text-amber-500;
+}
+
+.profile-auth-icon {
+  @apply mb-4 h-10 w-10 text-amber-500;
+}
+
+.profile-auth-title {
+  @apply text-2xl font-black uppercase italic text-foreground;
+}
+
+.profile-auth-text {
+  @apply mt-2 max-w-md text-sm text-muted-foreground;
+}
+
+.profile-auth-btn {
+  @apply mt-6 rounded-xl bg-amber-500 px-5 py-3 text-sm font-bold text-black transition-colors hover:bg-amber-400;
+}
+
+.profile-color-grid {
+  @apply flex flex-wrap gap-2;
+}
+
+.profile-color-btn {
+  @apply h-9 w-9 rounded-full border-2 border-transparent transition-transform hover:scale-110;
+}
+
+.profile-color-btn-active {
+  @apply border-white shadow-lg;
+}

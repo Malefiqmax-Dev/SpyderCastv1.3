@@ -1,0 +1,134 @@
+@import '../../styles/reference.css';
+
+.main {
+  @apply min-h-screen bg-black;
+}
+
+.container {
+  @apply mx-auto max-w-3xl pt-32 pb-24 px-4 lg:px-8;
+}
+
+.headerRow {
+  @apply mb-10 flex items-center gap-4;
+}
+
+.iconWrap {
+  @apply flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-600/20 border border-amber-500/30;
+}
+
+.icon {
+  @apply h-6 w-6 text-amber-500;
+}
+
+.title {
+  @apply text-4xl font-black uppercase italic tracking-tighter text-white;
+}
+
+.content {
+  @apply space-y-8 text-foreground/80 leading-relaxed;
+}
+
+.sectionTitle {
+  @apply mb-3 text-xl font-bold text-white flex items-center gap-2;
+}
+
+.sectionTitle::before {
+  content: "";
+  @apply w-1 h-6 bg-gradient-to-b from-amber-500 to-orange-600 rounded-full inline-block;
+}
+
+.paragraph {
+  @apply text-sm text-gray-400;
+}
+
+.paragraphWithMargin {
+  @apply mb-4 text-sm text-gray-400;
+}
+
+.list {
+  @apply space-y-2 text-sm list-disc list-inside text-gray-500;
+}
+
+.link {
+  @apply text-amber-500 hover:text-amber-400 underline underline-offset-2 transition-colors;
+}
+
+.paragraphSpaced {
+  @apply mt-3 text-sm text-gray-400;
+}
+
+.warningBox {
+  @apply rounded-xl border border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-orange-600/5 p-5 backdrop-blur-sm;
+}
+
+.warningText {
+  @apply text-sm text-amber-500/80;
+}
+
+.warningStrong {
+  @apply text-amber-400 font-bold uppercase;
+}
+
+.submitButton {
+  @apply px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold rounded-xl transition-all hover:scale-[1.02] shadow-lg shadow-orange-600/20;
+}
+
+.cancelButton {
+  @apply px-6 py-3 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-semibold rounded-xl transition-all;
+}
+
+.modalOverlay {
+  @apply fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4;
+}
+
+.modalContent {
+  @apply bg-[#0a0a0a] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 shadow-2xl;
+}
+
+.modalTitle {
+  @apply text-2xl font-black uppercase italic tracking-tighter text-white mb-8;
+}
+
+.form {
+  @apply space-y-6;
+}
+
+.formGroup {
+  @apply space-y-2;
+}
+
+.label {
+  @apply block text-xs font-bold uppercase tracking-wider text-gray-500;
+}
+
+.input {
+  @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-amber-500/50 transition-all;
+}
+
+.textarea {
+  @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-amber-500/50 transition-all resize-none;
+}
+
+.checkboxLabel {
+  @apply flex items-start gap-3 text-sm text-gray-400 cursor-pointer hover:text-gray-300 transition-colors;
+}
+
+.checkbox {
+  @apply mt-1 w-4 h-4 accent-amber-500 rounded border-white/10 bg-white/5;
+}
+
+.message {
+  @apply p-4 rounded-xl text-sm font-semibold;
+}
+
+.messageSuccess {
+  @apply bg-green-500/10 border border-green-500/20 text-green-400;
+}
+
+.messageError {
+  @apply bg-red-500/10 border border-red-500/20 text-red-400;
+}
+
+.formActions {
+  @apply flex gap-3 justify-end pt-6 border-t border-white/5 mt-8;
+}

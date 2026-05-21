@@ -1,0 +1,45 @@
+@import '../../styles/reference.css';
+
+.livewatch-modal-overlay {
+  @apply fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm;
+}
+
+.livewatch-modal-shell {
+  @apply flex h-[min(90vh,720px)] w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-card shadow-2xl;
+}
+
+.livewatch-modal-header {
+  @apply flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3;
+}
+
+.livewatch-modal-title {
+  @apply truncate text-sm font-bold uppercase tracking-wide text-foreground;
+}
+
+.livewatch-modal-actions {
+  @apply flex shrink-0 items-center gap-2;
+}
+
+.livewatch-modal-backup-btn {
+  @apply inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:border-amber-500/30 hover:text-foreground;
+}
+
+.livewatch-modal-backup-icon {
+  @apply h-3.5 w-3.5;
+}
+
+.livewatch-modal-close-btn {
+  @apply flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-muted-foreground transition-colors hover:border-red-500/30 hover:text-foreground;
+}
+
+.livewatch-modal-close-icon {
+  @apply h-4 w-4;
+}
+
+.livewatch-modal-player {
+  @apply relative flex-1 bg-black;
+}
+
+.livewatch-modal-iframe {
+  @apply absolute inset-0 h-full w-full border-0;
+}

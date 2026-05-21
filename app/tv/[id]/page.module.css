@@ -1,0 +1,225 @@
+@import '../../../styles/reference.css';
+
+.main {
+  @apply min-h-screen bg-background;
+}
+
+.similarSection {
+  @apply pb-10;
+}
+
+.hero {
+  @apply relative min-h-[70vh] w-full overflow-hidden;
+}
+
+.backdropImage {
+  @apply object-cover opacity-30;
+}
+
+.gradientTop {
+  @apply absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent;
+}
+
+.gradientSide {
+  @apply absolute inset-0 bg-gradient-to-r from-background via-background/30 to-transparent;
+}
+
+.content {
+  @apply relative pt-28 pb-16 px-4 lg:px-8;
+}
+
+.grid {
+  @apply mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-12;
+}
+
+.mainCol {
+  @apply lg:col-span-2 flex flex-col md:flex-row gap-8;
+}
+
+.posterWrap {
+  @apply flex-shrink-0;
+}
+
+.poster {
+  @apply relative h-72 w-48 overflow-hidden rounded-2xl border border-white/10 shadow-2xl lg:h-96 lg:w-64;
+}
+
+.posterImage {
+  @apply object-cover;
+}
+
+.info {
+  @apply flex-1;
+}
+
+.title {
+  @apply text-3xl font-black uppercase italic tracking-tighter text-foreground sm:text-4xl lg:text-5xl text-balance;
+}
+
+.tagline {
+  @apply mt-2 text-sm italic text-amber-400/80;
+}
+
+.meta {
+  @apply mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground;
+}
+
+.metaRating {
+  @apply flex items-center gap-1 font-semibold text-amber-400;
+}
+
+.metaItem {
+  @apply flex items-center gap-1;
+}
+
+.metaIcon {
+  @apply h-4 w-4 fill-current;
+}
+
+.metaIconOutline {
+  @apply h-4 w-4;
+}
+
+.seasonBadge {
+  @apply rounded-md bg-amber-600/20 px-2 py-0.5 text-xs font-semibold text-amber-300;
+}
+
+.metaText {
+  @apply text-muted-foreground;
+}
+
+.overview {
+  @apply mt-5 max-w-2xl leading-relaxed text-foreground/80;
+}
+
+.selectorRow {
+  @apply mt-6 flex flex-wrap items-end gap-4;
+}
+
+.selectorField {
+  @apply flex flex-col gap-1.5;
+}
+
+.selectorLabel {
+  @apply text-xs font-semibold uppercase tracking-wider text-muted-foreground;
+}
+
+.selectorWrap {
+  @apply relative;
+}
+
+.selector {
+  @apply appearance-none rounded-lg border border-white/10 bg-secondary px-4 py-2 pr-8 text-sm text-foreground focus:border-amber-500/50 focus:outline-none;
+}
+
+.selectorChevron {
+  @apply pointer-events-none absolute right-2 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground;
+}
+
+.actions {
+  @apply mt-5 flex flex-wrap items-center gap-3;
+}
+
+.watchBtn {
+  @apply flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 px-6 py-3 text-sm font-bold text-foreground transition-all hover:from-amber-400 hover:to-orange-500 hover:scale-[1.02];
+}
+
+.watchIcon {
+  @apply h-5 w-5 fill-current;
+}
+
+.trailerBtn {
+  @apply flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground backdrop-blur-sm transition-all hover:bg-white/10;
+}
+
+.trailerIcon {
+  @apply h-5 w-5 text-red-500;
+}
+
+.actionsGroup {
+  @apply flex items-center gap-2;
+}
+
+.actionBtn {
+  @apply rounded-xl border p-3 transition-all;
+}
+
+.actionBtnLiked {
+  @apply border-red-500/50 bg-red-500/10 text-red-400;
+}
+
+.actionBtnLikeDefault {
+  @apply border-white/10 bg-white/5 text-muted-foreground hover:border-red-500/30 hover:text-red-400;
+}
+
+.actionBtnWatchLaterActive {
+  @apply border-amber-500/50 bg-amber-500/10 text-amber-400;
+}
+
+.actionBtnWatchLaterDefault {
+  @apply border-white/10 bg-white/5 text-muted-foreground hover:border-amber-500/30 hover:text-amber-400;
+}
+
+.actionBtnWatchedActive {
+  @apply border-green-500/50 bg-green-500/10 text-green-400;
+}
+
+.actionBtnWatchedDefault {
+  @apply border-white/10 bg-white/5 text-muted-foreground hover:border-green-500/30 hover:text-green-400;
+}
+
+.actionIcon {
+  @apply h-5 w-5;
+}
+
+.actionIconFilled {
+  @apply h-5 w-5 fill-current;
+}
+
+.cast {
+  @apply mt-8;
+}
+
+.castTitle {
+  @apply mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground;
+}
+
+.castList {
+  @apply flex flex-wrap gap-2;
+}
+
+.castBadge {
+  @apply rounded-lg border border-white/5 bg-white/5 px-3 py-1 text-xs text-foreground/80;
+}
+
+.commentsCol {
+  @apply rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md p-6;
+}
+
+.commentsTitle {
+  @apply text-xl font-black uppercase italic tracking-tighter text-white mb-6;
+}
+
+.commentForm {
+  @apply space-y-4;
+}
+
+.commentTextarea {
+  @apply w-full rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-foreground focus:border-amber-500/50 focus:outline-none;
+}
+
+.commentSubmit {
+  @apply rounded-xl bg-amber-600 px-4 py-2 text-sm font-bold text-white transition-all hover:bg-amber-500;
+}
+
+.commentLogin {
+  @apply text-center py-10;
+}
+
+.commentLoginText {
+  @apply text-muted-foreground mb-4;
+}
+
+.commentLoginBtn {
+  @apply rounded-xl bg-white/10 px-6 py-2 text-sm font-bold text-white hover:bg-white/20;
+}

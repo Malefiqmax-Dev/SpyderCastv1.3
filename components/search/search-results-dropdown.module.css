@@ -1,0 +1,97 @@
+@import '../../styles/reference.css';
+
+.root {
+  @apply absolute left-0 top-full mt-4 w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-50 animate-in fade-in slide-in-from-top-2 duration-300;
+}
+
+.loading {
+  @apply flex items-center justify-center p-8 text-sm text-amber-500/80;
+}
+
+.loadingIcon {
+  @apply h-5 w-5 animate-spin mr-3;
+}
+
+.loadingText {
+  @apply font-medium tracking-wide;
+}
+
+.results {
+  @apply flex flex-col p-1.5;
+}
+
+.resultsLabel {
+  @apply px-3 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/30;
+}
+
+.resultLink {
+  @apply flex items-center gap-4 px-3 py-2.5 transition-all duration-300 rounded-xl hover:bg-white/5;
+}
+
+.poster {
+  @apply h-12 w-9 flex-shrink-0 overflow-hidden rounded-lg bg-white/5 shadow-lg transition-transform;
+}
+
+.resultLink:hover .poster {
+  transform: scale(1.05);
+}
+
+.posterImg {
+  @apply h-full w-full object-cover;
+}
+
+.posterPlaceholder {
+  @apply w-full h-full flex items-center justify-center text-[10px] text-white/20 italic;
+}
+
+.resultBody {
+  @apply flex-1 overflow-hidden;
+}
+
+.resultTitle {
+  @apply text-sm font-bold text-white/90 truncate transition-colors;
+}
+
+.resultLink:hover .resultTitle {
+  @apply text-white;
+}
+
+.resultMeta {
+  @apply flex items-center gap-2 mt-0.5;
+}
+
+.mediaBadge {
+  @apply text-[9px] font-bold px-1.5 py-0.5 rounded bg-white/10 text-white/50 uppercase tracking-tighter;
+}
+
+.year {
+  @apply text-[10px] text-white/30 font-medium;
+}
+
+.resultArrow {
+  @apply h-4 w-4 text-white/0 -translate-x-2 transition-all duration-300;
+}
+
+.resultLink:hover .resultArrow {
+  @apply text-white/40 translate-x-0;
+}
+
+.footer {
+  @apply mt-1.5 pt-1.5 border-t border-white/5;
+}
+
+.viewAllLink {
+  @apply flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 px-4 py-3 text-xs font-black uppercase tracking-widest text-white transition-all duration-300 hover:from-amber-400 hover:to-orange-500 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)] active:scale-[0.98];
+}
+
+.viewAllIcon {
+  @apply h-4 w-4;
+}
+
+.empty {
+  @apply p-10 text-center;
+}
+
+.emptyText {
+  @apply text-sm font-medium text-white/40 italic;
+}

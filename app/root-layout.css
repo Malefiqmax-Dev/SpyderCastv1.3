@@ -1,0 +1,9 @@
+@import '../styles/reference.css';
+
+.root-layout-html {
+  @apply bg-background;
+}
+
+.root-layout-body {
+  @apply font-sans antialiased;
+}

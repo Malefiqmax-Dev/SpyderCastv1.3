@@ -1,0 +1,109 @@
+@import '../../styles/reference.css';
+
+.main {
+  @apply min-h-screen bg-background;
+}
+
+.loadingMain {
+  @apply flex min-h-screen items-center justify-center bg-background;
+}
+
+.loader {
+  @apply h-10 w-10 animate-spin text-amber-500;
+}
+
+.authWrap {
+  @apply flex flex-col items-center justify-center gap-6 pt-48 text-center px-4;
+}
+
+.authIconWrap {
+  @apply flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10;
+}
+
+.authIcon {
+  @apply h-8 w-8 text-amber-500;
+}
+
+.authTitle {
+  @apply text-2xl font-black uppercase italic tracking-tighter text-foreground;
+}
+
+.authText {
+  @apply max-w-sm text-sm text-muted-foreground;
+}
+
+.container {
+  @apply mx-auto max-w-7xl pt-28 pb-20 px-4 lg:px-8;
+}
+
+.header {
+  @apply mb-10;
+}
+
+.title {
+  @apply text-4xl font-black uppercase italic tracking-tighter text-foreground;
+}
+
+.greeting {
+  @apply mt-2 text-sm text-muted-foreground;
+}
+
+.username {
+  @apply font-semibold;
+}
+
+.tabs {
+  @apply mb-8 flex gap-2 border-b border-white/5 pb-0;
+}
+
+.tabButton {
+  @apply flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-semibold transition-all;
+}
+
+.tabButtonActive {
+  @apply border-amber-500 text-foreground;
+}
+
+.tabButtonInactive {
+  @apply border-transparent text-muted-foreground hover:text-foreground;
+}
+
+.tabIcon {
+  @apply h-4 w-4;
+}
+
+.tabBadge {
+  @apply rounded-full px-2 py-0.5 text-xs;
+}
+
+.tabBadgeActive {
+  @apply bg-amber-500/20 text-amber-400;
+}
+
+.tabBadgeInactive {
+  @apply bg-white/5 text-muted-foreground;
+}
+
+.emptyState {
+  @apply flex flex-col items-center justify-center gap-4 py-24 text-center;
+}
+
+.emptyIconWrap {
+  @apply flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5;
+}
+
+.emptyIcon {
+  @apply h-8 w-8 text-muted-foreground;
+}
+
+.emptyTitle {
+  @apply text-lg font-semibold text-muted-foreground;
+}
+
+.emptySubtitle {
+  @apply text-sm text-muted-foreground;
+}
+
+.grid {
+  @apply grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6;
+}

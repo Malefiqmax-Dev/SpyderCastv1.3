@@ -1,0 +1,49 @@
+@import '../../styles/reference.css';
+
+.section {
+  @apply relative py-6;
+}
+
+.title {
+  @apply mb-2 px-4 text-xl font-bold lg:px-8;
+  color: var(--foreground);
+}
+
+.divider {
+  @apply mb-4 mx-4 lg:mx-8 h-1 w-16 rounded-full bg-gradient-to-r from-amber-500 to-orange-600;
+}
+
+.rowGroup {
+  @apply relative;
+}
+
+.scrollButton {
+  @apply absolute top-1/2 z-10 -translate-y-1/2 rounded-full bg-amber-900/70 p-2 backdrop-blur-sm transition-opacity hover:bg-amber-800/80;
+  color: var(--foreground);
+}
+
+.scrollButtonLeft {
+  @apply left-1;
+}
+
+.scrollButtonRight {
+  @apply right-1;
+}
+
+.chevronIcon {
+  @apply h-5 w-5;
+}
+
+.scrollTrack {
+  @apply flex gap-3 overflow-x-auto px-4 py-4 lg:px-8;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  @apply w-[140px] flex-shrink-0 sm:w-[160px] lg:w-[185px];
+}

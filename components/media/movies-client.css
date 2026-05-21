@@ -1,0 +1,13 @@
+@import '../../styles/reference.css';
+
+.movies-client-grid {
+  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 lg:gap-6;
+}
+
+.movies-client-load-more-wrap {
+  @apply mt-12 flex justify-center;
+}
+
+.movies-client-load-more-btn {
+  @apply bg-white/10 hover:bg-amber-600 text-white font-bold uppercase tracking-widest px-8 py-6 rounded-full;
+}

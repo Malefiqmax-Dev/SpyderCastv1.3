@@ -1,0 +1,17 @@
+@import '../../styles/reference.css';
+
+.user-avatar {
+  @apply relative shrink-0 overflow-hidden rounded-full border border-white/10 bg-secondary/40;
+}
+
+.user-avatar-image {
+  @apply object-cover;
+}
+
+.user-avatar-sm {
+  @apply border-white/5;
+}
+
+.user-avatar-xl {
+  @apply border-amber-500/30 shadow-lg shadow-amber-500/10;
+}

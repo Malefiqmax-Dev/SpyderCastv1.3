@@ -1,0 +1,37 @@
+@import '../../styles/reference.css';
+
+.footer-footer {
+  @apply border-t border-amber-900/20 bg-background;
+}
+
+.footer-inner {
+  @apply mx-auto flex flex-col items-center gap-4 px-4 py-8 text-center lg:px-8;
+}
+
+.footer-footer-logo-link {
+  @apply mb-6 inline-block;
+}
+
+.footer-logo {
+  @apply text-2xl font-black tracking-tighter text-white uppercase italic;
+}
+
+.footer-footer-logo-accent {
+  @apply text-amber-500;
+}
+
+.footer-footer-tagline {
+  @apply text-sm text-muted-foreground;
+}
+
+.footer-links {
+  @apply flex items-center gap-6;
+}
+
+.footer-link {
+  @apply text-xs text-muted-foreground hover:text-foreground transition-colors;
+}
+
+.footer-footer-copyright {
+  @apply text-xs text-muted-foreground/50;
+}

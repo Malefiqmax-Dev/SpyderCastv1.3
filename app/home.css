@@ -1,0 +1,14 @@
+@import '../styles/reference.css';
+
+.home-main {
+  @apply bg-background;
+  min-height: 100vh;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-bottom: 5rem;
+  padding-top: 1rem;
+}

@@ -1,0 +1,93 @@
+@import '../../styles/reference.css';
+
+.overlay {
+  @apply fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm;
+}
+
+.card {
+  @apply relative mx-4 w-full max-w-md rounded-2xl border border-amber-800/30 bg-card p-8 shadow-2xl shadow-amber-900/20;
+}
+
+.closeBtn {
+  @apply absolute right-4 top-4 text-muted-foreground transition-colors hover:text-foreground;
+}
+
+.closeIcon {
+  @apply h-5 w-5;
+}
+
+.header {
+  @apply mb-6 flex flex-col items-center text-center;
+}
+
+.logo {
+  @apply text-3xl font-black tracking-tighter text-white uppercase italic mb-2;
+}
+
+.logoAccent {
+  @apply text-amber-500;
+}
+
+.subtitle {
+  @apply text-sm text-muted-foreground;
+}
+
+.alertError {
+  @apply mb-4 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-2.5 text-sm text-red-400;
+}
+
+.alertSuccess {
+  @apply mb-4 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-2.5 text-sm text-green-400;
+}
+
+.form {
+  @apply flex flex-col gap-4;
+}
+
+.field {
+  @apply flex flex-col gap-1.5;
+}
+
+.label {
+  @apply text-sm font-medium text-foreground/80;
+}
+
+.input {
+  @apply rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-amber-500/50 focus:outline-none;
+}
+
+.inputDisabled {
+  @apply disabled:opacity-50;
+}
+
+.passwordWrap {
+  @apply relative;
+}
+
+.passwordInput {
+  @apply w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 pr-10 text-sm text-foreground placeholder:text-muted-foreground focus:border-amber-500/50 focus:outline-none disabled:opacity-50;
+}
+
+.togglePassword {
+  @apply absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground;
+}
+
+.toggleIcon {
+  @apply h-4 w-4;
+}
+
+.submitBtn {
+  @apply mt-2 flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:from-amber-400 hover:to-orange-500 disabled:opacity-50;
+}
+
+.submitIcon {
+  @apply h-4 w-4 animate-spin;
+}
+
+.footer {
+  @apply mt-6 text-center text-sm text-muted-foreground;
+}
+
+.linkBtn {
+  @apply font-medium text-amber-400 hover:text-amber-300;
+}
