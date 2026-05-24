@@ -7,6 +7,7 @@ import { SmartlinkPopup } from "@/components/player/smartlink-popup"
 import { TV_COUNTRIES } from "@/lib/livewatch"
 import type {
   LiveWatchBossTvMatch,
+  LiveWatchChannel,
   LiveWatchEmbedResponse,
   LiveWatchFootballMatch,
   LiveWatchPlayerTarget,
@@ -29,6 +30,8 @@ const TABS: { id: LiveWatchTab; label: string; icon: typeof Tv }[] = [
   { id: "sports", label: "Sports", icon: Trophy },
   { id: "football", label: "Football", icon: Goal },
   { id: "bosstv", label: "Boss TV", icon: Tv },
+  { id: "channels", label: "Chaines Tv", icon: Satellite },
+  { id: "daddy", label: "DaddyTV", icon: Radio },
   { id: "sportsInfo", label: "Planning", icon: CalendarDays },
 ]
 
@@ -119,11 +122,15 @@ export default function LiveSportPage() {
   const sportEvents = data?.events ?? []
   const footballMatches = data?.matches ?? []
   const bossTvMatches = (data?.matches ?? data?.channels ?? []) as LiveWatchBossTvMatch[]
+  const tvChannels = data?.tvChannels ?? []
+  const daddyChannels = data?.daddyChannels ?? []
 
   const sportsArray = Array.isArray(sports) ? sports : []
   const sportEventsArray = Array.isArray(sportEvents) ? sportEvents : []
   const footballMatchesArray = Array.isArray(footballMatches) ? footballMatches : []
   const bossTvMatchesArray = Array.isArray(bossTvMatches) ? bossTvMatches : []
+  const tvChannelsArray = Array.isArray(tvChannels) ? tvChannels : []
+  const daddyChannelsArray = Array.isArray(daddyChannels) ? daddyChannels : []
 
   const totalLabel = useMemo(() => {
     if (!data) return null
@@ -139,8 +146,14 @@ export default function LiveSportPage() {
     if (activeTab === "sportsInfo") {
       return `${data.total_days ?? 0} jours · ${data.total ?? 0} evenements`
     }
+    if (activeTab === "channels") {
+      return `${data.total ?? tvChannelsArray.length} chaines`
+    }
+    if (activeTab === "daddy") {
+      return `${data.total ?? daddyChannelsArray.length} chaines`
+    }
     return `${data.total ?? 0} resultats`
-  }, [activeTab, data, footballMatchesArray, sportEventsArray, bossTvMatchesArray])
+  }, [activeTab, data, footballMatchesArray, sportEventsArray, bossTvMatchesArray, tvChannelsArray, daddyChannelsArray])
 
   function openPlayer(target: LiveWatchPlayerTarget) {
     setPendingPlayer(target)
@@ -257,7 +270,23 @@ export default function LiveSportPage() {
             </div>
           )}
 
-          {!loading && !error && isEmpty(activeTab, sportEventsArray, footballMatchesArray, bossTvMatchesArray) && (
+          {!loading && !error && activeTab === "channels" && (
+            <div className="live-sport-events">
+              {tvChannelsArray.map((channel) => (
+                <ChannelCard key={channel.id} channel={channel} onPlay={openPlayer} />
+              ))}
+            </div>
+          )}
+
+          {!loading && !error && activeTab === "daddy" && (
+            <div className="live-sport-events">
+              {daddyChannelsArray.map((channel) => (
+                <DaddyChannelCard key={channel.id} channel={channel} onPlay={openPlayer} />
+              ))}
+            </div>
+          )}
+
+          {!loading && !error && isEmpty(activeTab, sportEventsArray, footballMatchesArray, bossTvMatchesArray, tvChannelsArray, daddyChannelsArray) && (
             <div className="live-sport-empty">
               <p>Aucun contenu disponible pour cette selection.</p>
             </div>
@@ -296,11 +325,15 @@ function isEmpty(
   events: LiveWatchSportEvent[],
   matches: LiveWatchFootballMatch[],
   bossTvMatches: LiveWatchBossTvMatch[],
+  tvChannels: LiveWatchChannel[],
+  daddyChannels: LiveWatchChannel[],
 ) {
   if (tab === "sports") return events.length === 0
   if (tab === "football") return matches.length === 0
   if (tab === "bosstv") return bossTvMatches.length === 0
   if (tab === "sportsInfo") return events.length === 0
+  if (tab === "channels") return tvChannels.length === 0
+  if (tab === "daddy") return daddyChannels.length === 0
   return true
 }
 
@@ -448,6 +481,63 @@ function BossTvMatchCard({
       </div>
 
       <p className="live-sport-event-time">{match.time_label}</p>
+    </button>
+  )
+}
+
+function ChannelCard({
+  channel,
+  onPlay,
+}: {
+  channel: LiveWatchChannel
+  onPlay: (target: LiveWatchPlayerTarget) => void
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onPlay({ title: channel.name, embedUrl: channel.embed_url })}
+      className="live-sport-event-card"
+    >
+      <div className="live-sport-event-badges">
+        <span className="live-sport-sport-badge">{channel.country}</span>
+        {channel.categories.length > 0 && (
+          <span className="live-sport-sport-badge">{channel.categories[0]}</span>
+        )}
+      </div>
+
+      <div className="live-sport-event-body">
+        <div className="live-sport-event-info">
+          <p className="live-sport-event-title">{channel.name}</p>
+          <p className="live-sport-event-league">{channel.source}</p>
+        </div>
+      </div>
+    </button>
+  )
+}
+
+function DaddyChannelCard({
+  channel,
+  onPlay,
+}: {
+  channel: LiveWatchChannel
+  onPlay: (target: LiveWatchPlayerTarget) => void
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onPlay({ title: channel.name, embedUrl: channel.embed_url })}
+      className="live-sport-event-card"
+    >
+      <div className="live-sport-event-badges">
+        <span className="live-sport-sport-badge">{channel.country}</span>
+        <span className="live-sport-sport-badge">{(channel as any).category || "General"}</span>
+      </div>
+
+      <div className="live-sport-event-body">
+        <div className="live-sport-event-info">
+          <p className="live-sport-event-title">{channel.name}</p>
+        </div>
+      </div>
     </button>
   )
 }

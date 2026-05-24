@@ -1,4 +1,4 @@
-export type LiveWatchTab = "sports" | "football" | "bosstv" | "sportsInfo"
+export type LiveWatchTab = "sports" | "football" | "bosstv" | "sportsInfo" | "channels" | "daddy"
 
 export interface LiveWatchEmbed {
   label: string
@@ -53,6 +53,15 @@ export interface LiveWatchBossTvMatch {
   embeds: LiveWatchEmbed[]
 }
 
+export interface LiveWatchChannel {
+  id: string
+  name: string
+  source: string
+  country: string
+  categories: string[]
+  embed_url: string
+}
+
 export interface LiveWatchEmbedResponse {
   type: LiveWatchTab
   total?: number
@@ -71,6 +80,8 @@ export interface LiveWatchEmbedResponse {
   events?: LiveWatchSportEvent[]
   matches?: LiveWatchFootballMatch[]
   channels?: LiveWatchBossTvMatch[]
+  tvChannels?: LiveWatchChannel[]
+  daddyChannels?: LiveWatchChannel[]
 }
 
 export interface LiveWatchPlayerTarget {

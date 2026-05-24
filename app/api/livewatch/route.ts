@@ -40,11 +40,25 @@ export async function GET(req: NextRequest) {
       case "sportsInfo":
         endpoint = LIVEWATCH_ENDPOINTS.sportsInfo
         break
+      case "channels":
+        endpoint = LIVEWATCH_ENDPOINTS.channels
+        break
+      case "daddy":
+        endpoint = LIVEWATCH_ENDPOINTS.daddy
+        break
       default:
         return NextResponse.json({ error: "Type non reconnu." }, { status: 400 })
     }
 
-    const data = await fetchLiveWatch<LiveWatchEmbedResponse>(endpoint, params)
+    const data = await fetchLiveWatch<any>(endpoint, params)
+
+    // Transform response for channels and daddy endpoints
+    if (type === "channels" && data.channels) {
+      data.tvChannels = data.channels
+    }
+    if (type === "daddy" && data.channels) {
+      data.daddyChannels = data.channels
+    }
 
     return NextResponse.json(data, { headers: CACHE_HEADERS })
   } catch (error) {

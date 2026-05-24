@@ -6,6 +6,8 @@ export const LIVEWATCH_ENDPOINTS = {
   football: "/api/v1/public/football",
   bosstv: "/api/v1/public/bosstv",
   sportsInfo: "/api/v1/public/sports/info",
+  channels: "/api/v1/public/channels",
+  daddy: "/api/v1/public/daddy/channels",
 } as const
 
 export async function fetchLiveWatch<T>(
