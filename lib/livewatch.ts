@@ -1,6 +1,13 @@
 export const LIVEWATCH_BASE_URL = "https://livewatch.top"
 export const LIVEWATCH_CACHE_SECONDS = 3600
 
+export const LIVEWATCH_ENDPOINTS = {
+  sports: "/api/v1/public/sports",
+  football: "/api/v1/public/football",
+  bosstv: "/api/v1/public/bosstv",
+  sportsInfo: "/api/v1/public/sports/info",
+} as const
+
 export async function fetchLiveWatch<T>(
   path: string,
   params: Record<string, string | undefined> = {},

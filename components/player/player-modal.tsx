@@ -43,7 +43,7 @@ export function PlayerModal({
   const [loading, setLoading] = useState(false)
   const [sourceWarning, setSourceWarning] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [isVerified, setIsVerified] = useState(false)
+  const [isVerified, setIsVerified] = useState(true) // Temporarily disabled captcha
   const [contentType, setContentType] = useState<string>("mp4")
   const [selectedSourceId, setSelectedSourceId] = useState<PlayerSourceId>("eau")
 

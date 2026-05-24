@@ -1,19 +1,7 @@
-export type LiveWatchTab = "tv" | "daddy" | "sports" | "football" | "events"
+export type LiveWatchTab = "sports" | "football" | "bosstv" | "sportsInfo"
 
-export interface LiveWatchTvChannel {
-  id: string
-  name: string
-  logo?: string | null
-  category?: string | null
-  country?: string | null
-  embed_url: string
-  backup_embed_url?: string | null
-}
-
-export interface LiveWatchDaddyChannel {
-  id: string
-  name: string
-  country?: string | null
+export interface LiveWatchEmbed {
+  label: string
   embed_url: string
 }
 
@@ -23,13 +11,13 @@ export interface LiveWatchSportEvent {
   sport?: string | null
   league?: string | null
   time?: string | null
-  isLive?: boolean
+  is_live?: boolean
   popular?: boolean
   home?: string | null
   away?: string | null
   home_badge?: string | null
   away_badge?: string | null
-  embed_url: string
+  embeds: LiveWatchEmbed[]
 }
 
 export interface LiveWatchFootballMatch {
@@ -46,7 +34,23 @@ export interface LiveWatchFootballMatch {
   is_live?: boolean
   status?: string | null
   time_label?: string | null
-  embed_url: string
+  embeds: LiveWatchEmbed[]
+}
+
+export interface LiveWatchBossTvMatch {
+  id: string
+  title: string
+  home: string
+  away: string
+  home_logo?: string | null
+  away_logo?: string | null
+  league: string
+  status: string
+  is_live: boolean
+  is_finished: boolean
+  timestamp: number
+  time_label: string
+  embeds: LiveWatchEmbed[]
 }
 
 export interface LiveWatchEmbedResponse {
@@ -58,9 +62,15 @@ export interface LiveWatchEmbedResponse {
   sport_counts?: Record<string, number>
   leagues?: string[]
   live_count?: number
-  channels?: LiveWatchTvChannel[] | LiveWatchDaddyChannel[]
+  popular_count?: number
+  upcoming_count?: number
+  finished_count?: number
+  league_count?: number
+  total_days?: number
+  days?: any[]
   events?: LiveWatchSportEvent[]
   matches?: LiveWatchFootballMatch[]
+  channels?: LiveWatchBossTvMatch[]
 }
 
 export interface LiveWatchPlayerTarget {
