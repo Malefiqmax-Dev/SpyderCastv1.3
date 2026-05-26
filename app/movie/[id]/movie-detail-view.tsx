@@ -1,15 +1,12 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Play, Star, Clock, Calendar, Heart, BookmarkPlus, Eye, Youtube } from "lucide-react"
 import { PlayerModal } from "@/components/player/player-modal"
 import { SmartlinkPopup } from "@/components/player/smartlink-popup"
 import { AuthModal } from "@/components/auth/auth-modal"
-import { UserAvatar } from "@/components/auth/user-avatar"
-import { WatchPartyUI } from "@/components/watch-party/watch-party-ui"
 import { useAuth } from "@/components/auth/auth-context"
-import { resolveStoredCommentUser } from "@/lib/profile-icons"
 import styles from "./page.module.css"
 
 interface MovieDetailViewProps {
@@ -31,64 +28,8 @@ export function MovieDetailView({
   const [actualPlayerOpen, setActualPlayerOpen] = useState(false)
   const [trailerOpen, setTrailerOpen] = useState(false)
   const [authOpen, setAuthOpen] = useState(false)
-  const [comment, setComment] = useState("")
-  const [comments, setComments] = useState<any[]>([])
-  const [loading, setLoading] = useState(false)
-  const [submitting, setSubmitting] = useState(false)
   const { user, isLiked, isWatched, isWatchLater, toggleLike, toggleWatched, toggleWatchLater } =
     useAuth()
-
-  useEffect(() => {
-    async function fetchComments() {
-      try {
-        const res = await fetch(`/api/movies/comments?movieId=${movie.id}`)
-        const data = await res.json()
-        setComments(data)
-      } catch (e) {
-        console.error("Failed to fetch comments", e)
-      }
-    }
-    fetchComments()
-  }, [movie.id])
-
-  async function handlePublish() {
-    if (!comment.trim() || submitting || !user) return
-    setSubmitting(true)
-    try {
-      const res = await fetch("/api/movies/comments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          movieId: movie.id,
-          content: comment,
-          user: {
-            id: user.id,
-            username: user.username,
-            avatarIconId: user.avatarIconId,
-            avatarUrl: user.avatarUrl,
-            nameColor: user.nameColor,
-          },
-        }),
-      })
-      const newComment = await res.json()
-      setComments([newComment, ...comments])
-      setComment("")
-    } catch (e) {
-      alert("Erreur lors de la publication")
-    } finally {
-      setSubmitting(false)
-    }
-  }
-
-  function getRelativeDate(dateString: string) {
-    const diff = Date.now() - new Date(dateString).getTime()
-    const minutes = Math.floor(diff / 60000)
-    if (minutes < 1) return "à l'instant"
-    if (minutes < 60) return `il y a ${minutes} min`
-    const hours = Math.floor(minutes / 60)
-    if (hours < 24) return `il y a ${hours} h`
-    return `il y a ${Math.floor(hours / 24)} j`
-  }
 
   const mediaItem = {
     id: movie.id,
@@ -181,8 +122,6 @@ export function MovieDetailView({
                     </button>
                   )}
 
-                  <WatchPartyUI mediaType="movie" tmdbId={movie.id} />
-
                   {user && (
                     <div className={styles.actionsGroup}>
                       <button
@@ -233,60 +172,6 @@ export function MovieDetailView({
                     </div>
                   </div>
                 )}
-              </div>
-            </div>
-
-            <div className={styles.commentsCol}>
-              <h2 className={styles.commentsTitle}>Commentaires</h2>
-              {user ? (
-                <div className={styles.commentForm}>
-                  <textarea
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                    placeholder="Laisser un commentaire..."
-                    className={styles.commentTextarea}
-                    rows={3}
-                  />
-                  <button
-                    type="button"
-                    onClick={handlePublish}
-                    disabled={submitting || !comment.trim()}
-                    className={styles.commentSubmit}
-                  >
-                    {submitting ? "Publication..." : "Publier"}
-                  </button>
-                </div>
-              ) : (
-                <div className={styles.commentLogin}>
-                  <p className={styles.commentLoginText}>Connectez-vous pour laisser un avis.</p>
-                  <button type="button" onClick={() => setAuthOpen(true)} className={styles.commentLoginBtn}>
-                    Se connecter
-                  </button>
-                </div>
-              )}
-
-              <div className={styles.commentsList}>
-                {comments.map((c: any) => {
-                  const commentUser = resolveStoredCommentUser(c.user)
-                  return (
-                  <div key={c.id} className={styles.commentItem}>
-                    <div className={styles.commentHeader}>
-                      <UserAvatar
-                        avatarIconId={commentUser.avatarIconId}
-                        avatarUrl={commentUser.avatarUrl}
-                        username={commentUser.username}
-                        size="sm"
-                        className={styles.commentAvatar}
-                      />
-                      <p className={styles.commentUsername} style={{ color: commentUser.nameColor }}>
-                        {commentUser.username}
-                      </p>
-                    </div>
-                    <p className={styles.commentContent}>{c.content}</p>
-                    <p className={styles.commentDate}>{getRelativeDate(c.createdAt)}</p>
-                  </div>
-                  )
-                })}
               </div>
             </div>
           </div>

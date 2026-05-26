@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/footer"
 import { HeroBanner } from "@/components/media/hero-banner"
 import { MediaRow } from "@/components/media/media-row"
 import { Top10 } from "@/components/media/top-10"
+import { TelegramPopup } from "@/components/ui/telegram-popup"
 import {
   getTrending,
   getPopularMovies,
@@ -63,6 +64,7 @@ export default async function HomePage() {
 
   return (
     <main className={"home-main"}>
+      <TelegramPopup />
 
       {heroItemsWithLogos.length > 0 && <HeroBanner items={heroItemsWithLogos} />}
 

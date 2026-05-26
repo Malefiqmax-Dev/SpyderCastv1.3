@@ -1,7 +1,7 @@
 @import '../../styles/reference.css';
 
 .root {
-  @apply relative h-[60vh] w-full overflow-hidden lg:h-[85vh] bg-[#0a0a0c];
+  @apply relative h-screen w-full overflow-hidden bg-[#0a0a0c];
 }
 
 .backdrop {
@@ -116,4 +116,12 @@
   to {
     width: 100%;
   }
+}
+
+.scrollButton {
+  @apply absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:bg-white/20 transition-all hover:scale-110 animate-bounce cursor-pointer;
+}
+
+.scrollButtonIcon {
+  @apply h-5 w-5;
 }

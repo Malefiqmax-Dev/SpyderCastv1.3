@@ -4,10 +4,9 @@ import { X, Loader2, ShieldCheck, AlertCircle } from "lucide-react"
 import { useEffect, useState, useCallback, useRef, useMemo } from "react"
 import { TurnstileWrapper as Turnstile } from "@/components/captcha/turnstile-captcha"
 import { ExternalIframePlayer } from "./external-iframe-player"
-import { SourcePicker } from "./source-picker"
+import { PremiumSourcePicker } from "./premium-source-picker"
 import Image from "next/image"
-import Hls from "hls.js"
-import Plyr from "plyr"
+import dynamic from "next/dynamic"
 import {
   buildExternalSourceUrl,
   getPlayerSource,
@@ -16,6 +15,9 @@ import {
   type PlayerSourceId,
 } from "@/lib/player-sources"
 import styles from "./player-modal.module.css"
+
+const Hls = dynamic(() => import("hls.js"), { ssr: false })
+const Plyr = dynamic(() => import("plyr"), { ssr: false })
 
 interface PlayerModalProps {
   url?: string
@@ -48,8 +50,8 @@ export function PlayerModal({
   const [selectedSourceId, setSelectedSourceId] = useState<PlayerSourceId>("eau")
 
   const videoRef = useRef<HTMLVideoElement>(null)
-  const playerRef = useRef<Plyr | null>(null)
-  const hlsRef = useRef<Hls | null>(null)
+  const playerRef = useRef<any>(null)
+  const hlsRef = useRef<any>(null)
 
   const selectedSource = useMemo(
     () => getPlayerSource(selectedSourceId),
@@ -80,13 +82,13 @@ export function PlayerModal({
     }
   }, [])
 
-  const initPlayer = useCallback((source: string, type: string) => {
+  const initPlayer = useCallback(async (source: string, type: string) => {
     const video = videoRef.current
     if (!video) return
 
     destroyPlayer()
 
-    const defaultOptions: Plyr.Options = {
+    const defaultOptions: any = {
       captions: { active: true, update: true, language: "fr" },
       quality: { default: 1080, options: [4320, 2880, 2160, 1440, 1080, 720, 540, 480, 360, 240] },
       controls: [
@@ -125,21 +127,25 @@ export function PlayerModal({
     }
 
     if (type === "hls") {
-      if (Hls.isSupported()) {
-        const hls = new Hls()
+      const HlsModule = await Hls
+      const PlyrModule = await Plyr
+      if (HlsModule.isSupported()) {
+        const hls = new HlsModule.default()
         hlsRef.current = hls
         hls.loadSource(source)
         hls.attachMedia(video)
-        hls.on(Hls.Events.MANIFEST_PARSED, () => {
-          playerRef.current = new Plyr(video, defaultOptions)
+        hls.on(HlsModule.Events.MANIFEST_PARSED, () => {
+          playerRef.current = new PlyrModule.default(video, defaultOptions)
         })
       } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
         video.src = source
-        playerRef.current = new Plyr(video, defaultOptions)
+        const PlyrModule = await Plyr
+        playerRef.current = new PlyrModule.default(video, defaultOptions)
       }
     } else {
       video.src = source
-      playerRef.current = new Plyr(video, defaultOptions)
+      const PlyrModule = await Plyr
+      playerRef.current = new PlyrModule.default(video, defaultOptions)
     }
   }, [destroyPlayer])
 
@@ -239,6 +245,7 @@ export function PlayerModal({
           url={externalUrl}
           title={title}
           loadingLabel={`Chargement de ${selectedSource.label}...`}
+          bypassSandbox={selectedSource.id === "vidking" || selectedSource.id === "videasy" || selectedSource.id === "peachify" || selectedSource.id === "feu" || selectedSource.id === "nontongo" || selectedSource.id === "dcp"}
         />
       )
     }
@@ -291,7 +298,7 @@ export function PlayerModal({
               </div>
 
               <aside className={styles.sourcesAside}>
-                <SourcePicker
+                <PremiumSourcePicker
                   selectedId={selectedSourceId}
                   onSelect={setSelectedSourceId}
                 />

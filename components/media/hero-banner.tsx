@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Play, Info } from "lucide-react"
+import { Play, Info, ChevronDown } from "lucide-react"
 import { getBackdropUrl, getImageUrl } from "@/lib/tmdb"
 import { useState, useEffect } from "react"
 import styles from "./hero-banner.module.css"
@@ -126,6 +126,15 @@ export function HeroBanner({ items }: HeroBannerProps) {
             </button>
           ))}
         </div>
+
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+          className={styles.scrollButton}
+          aria-label="Faire défiler"
+        >
+          <ChevronDown className={styles.scrollButtonIcon} />
+        </button>
       </div>
     </div>
   )

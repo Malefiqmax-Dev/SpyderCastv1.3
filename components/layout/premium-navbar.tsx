@@ -135,7 +135,12 @@ export function PremiumNavbar() {
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   className="premium-navbar-avatar-btn"
                 >
-                  <img src={user.avatar} alt={user.username} className="premium-navbar-avatar-img" />
+                  <UserAvatar
+                    avatarIconId={user.avatarIconId}
+                    avatarUrl={user.avatarUrl}
+                    username={user.username}
+                    size="sm"
+                  />
                 </button>
                 {dropdownOpen && (
                   <div className="premium-navbar-dropdown">

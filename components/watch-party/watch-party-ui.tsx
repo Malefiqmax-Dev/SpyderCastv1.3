@@ -14,6 +14,7 @@ interface WatchPartyUIProps {
   season?: string
   episode?: number
   onSync?: (currentTime: number, isPlaying: boolean) => void
+  onWatchPartyChange?: (watchPartyId: string | undefined) => void
 }
 
 interface WatchParty {
@@ -49,7 +50,7 @@ interface Message {
   createdAt: string
 }
 
-export function WatchPartyUI({ mediaType, tmdbId, season, episode, onSync }: WatchPartyUIProps) {
+export function WatchPartyUI({ mediaType, tmdbId, season, episode, onSync, onWatchPartyChange }: WatchPartyUIProps) {
   const { user } = useAuth()
   const router = useRouter()
   const [watchParty, setWatchParty] = useState<WatchParty | null>(null)
@@ -59,6 +60,8 @@ export function WatchPartyUI({ mediaType, tmdbId, season, episode, onSync }: Wat
   const [messages, setMessages] = useState<Message[]>([])
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const syncIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const [showJoinInput, setShowJoinInput] = useState(false)
+  const [joinCode, setJoinCode] = useState("")
 
   useEffect(() => {
     loadWatchParty()
@@ -68,6 +71,10 @@ export function WatchPartyUI({ mediaType, tmdbId, season, episode, onSync }: Wat
       }
     }
   }, [mediaType, tmdbId, season, episode])
+
+  useEffect(() => {
+    onWatchPartyChange?.(watchParty?.id)
+  }, [watchParty, onWatchPartyChange])
 
   useEffect(() => {
     if (watchParty) {
@@ -126,6 +133,41 @@ export function WatchPartyUI({ mediaType, tmdbId, season, episode, onSync }: Wat
       toast.success("Watch party créée !")
     } catch {
       toast.error("Erreur lors de la création")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  async function joinWatchParty() {
+    if (!user || !joinCode.trim()) return
+    setLoading(true)
+
+    try {
+      const res = await fetch("/api/watch-party/join", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ watchPartyId: joinCode.trim() }),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        toast.error(data.error || "Impossible de rejoindre la watch party")
+        return
+      }
+
+      const data = await res.json()
+      // Load the watch party details
+      const partyRes = await fetch(`/api/watch-party?id=${joinCode.trim()}`)
+      if (partyRes.ok) {
+        const partyData = await partyRes.json()
+        setWatchParty(partyData.watchParty)
+        setMessages(partyData.watchParty.messages || [])
+        toast.success("Rejoint la watch party !")
+        setShowJoinInput(false)
+        setJoinCode("")
+      }
+    } catch {
+      toast.error("Erreur lors de la jonction")
     } finally {
       setLoading(false)
     }
@@ -243,14 +285,50 @@ export function WatchPartyUI({ mediaType, tmdbId, season, episode, onSync }: Wat
   return (
     <div className={styles.watchPartyContainer}>
       {!watchParty ? (
-        <button
-          onClick={createWatchParty}
-          disabled={loading}
-          className={styles.watchPartyCreateBtn}
-        >
-          <Users className={styles.watchPartyIcon} />
-          {loading ? "Création..." : "Créer une Watch Party"}
-        </button>
+        <>
+          {showJoinInput ? (
+            <div className={styles.watchPartyJoinForm}>
+              <input
+                type="text"
+                value={joinCode}
+                onChange={(e) => setJoinCode(e.target.value)}
+                placeholder="Entrez le code de la watch party..."
+                className={styles.watchPartyJoinInput}
+              />
+              <button
+                onClick={joinWatchParty}
+                disabled={loading || !joinCode.trim()}
+                className={styles.watchPartyJoinSubmit}
+              >
+                {loading ? "Rejoint..." : "Rejoindre"}
+              </button>
+              <button
+                onClick={() => setShowJoinInput(false)}
+                className={styles.watchPartyCancelBtn}
+              >
+                Annuler
+              </button>
+            </div>
+          ) : (
+            <div className={styles.watchPartyActions}>
+              <button
+                onClick={createWatchParty}
+                disabled={loading}
+                className={styles.watchPartyCreateBtn}
+              >
+                <Users className={styles.watchPartyIcon} />
+                {loading ? "Création..." : "Créer une Watch Party"}
+              </button>
+              <button
+                onClick={() => setShowJoinInput(true)}
+                disabled={loading}
+                className={styles.watchPartyJoinBtn}
+              >
+                Rejoindre
+              </button>
+            </div>
+          )}
+        </>
       ) : (
         <div className={styles.watchPartyPanel}>
           <div className={styles.watchPartyHeader}>
@@ -258,7 +336,7 @@ export function WatchPartyUI({ mediaType, tmdbId, season, episode, onSync }: Wat
               <Users className={styles.watchPartyIcon} />
               <span className={styles.watchPartyTitle}>Watch Party</span>
               <span className={styles.watchPartyParticipants}>
-                {watchParty.participants.length} participant{watchParty.participants.length > 1 ? "s" : ""}
+                {watchParty.participants?.length || 0} participant{(watchParty.participants?.length || 0) > 1 ? "s" : ""}
               </span>
             </div>
             <div className={styles.watchPartyActions}>

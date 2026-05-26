@@ -6,7 +6,6 @@ import { Play, Star, Calendar, Heart, BookmarkPlus, Eye, Youtube, ChevronDown } 
 import { PlayerModal } from "@/components/player/player-modal"
 import { SmartlinkPopup } from "@/components/player/smartlink-popup"
 import { AuthModal } from "@/components/auth/auth-modal"
-import { WatchPartyUI } from "@/components/watch-party/watch-party-ui"
 import { useAuth } from "@/components/auth/auth-context"
 import styles from "./page.module.css"
 
@@ -29,7 +28,6 @@ export function TVDetailView({
   const [actualPlayerOpen, setActualPlayerOpen] = useState(false)
   const [trailerOpen, setTrailerOpen] = useState(false)
   const [authOpen, setAuthOpen] = useState(false)
-  const [comment, setComment] = useState("")
   const [selectedSeason, setSelectedSeason] = useState(1)
   const [selectedEpisode, setSelectedEpisode] = useState(1)
   const { user, isLiked, isWatched, isWatchLater, toggleLike, toggleWatched, toggleWatchLater } =
@@ -177,13 +175,6 @@ export function TVDetailView({
                     </button>
                   )}
 
-                  <WatchPartyUI 
-                    mediaType="series" 
-                    tmdbId={show.id} 
-                    season={`S${String(selectedSeason).padStart(2, '0')}`}
-                    episode={selectedEpisode}
-                  />
-
                   {user && (
                     <div className={styles.actionsGroup}>
                       <button
@@ -235,31 +226,6 @@ export function TVDetailView({
                   </div>
                 )}
               </div>
-            </div>
-
-            <div className={styles.commentsCol}>
-              <h2 className={styles.commentsTitle}>Commentaires</h2>
-              {user ? (
-                <div className={styles.commentForm}>
-                  <textarea
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                    placeholder="Laisser un commentaire..."
-                    className={styles.commentTextarea}
-                    rows={3}
-                  />
-                  <button type="button" className={styles.commentSubmit}>
-                    Publier
-                  </button>
-                </div>
-              ) : (
-                <div className={styles.commentLogin}>
-                  <p className={styles.commentLoginText}>Connectez-vous pour laisser un avis.</p>
-                  <button type="button" onClick={() => setAuthOpen(true)} className={styles.commentLoginBtn}>
-                    Se connecter
-                  </button>
-                </div>
-              )}
             </div>
           </div>
         </div>

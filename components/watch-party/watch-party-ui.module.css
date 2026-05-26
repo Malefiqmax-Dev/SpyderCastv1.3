@@ -77,6 +77,109 @@
   gap: 0.5rem;
 }
 
+.watchPartyJoinBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  background-color: rgba(59, 130, 246, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(96, 165, 250);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.watchPartyJoinBtn:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.watchPartyJoinForm {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.watchPartyJoinInput {
+  flex: 1;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: rgb(244 244 245);
+  transition: all 0.2s ease;
+}
+
+.watchPartyJoinInput::placeholder {
+  color: rgb(161 161 170);
+}
+
+.watchPartyJoinInput:focus {
+  outline: none;
+  border-color: rgba(59, 130, 246, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.watchPartyJoinSubmit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  background-color: rgba(59, 130, 246, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.watchPartyJoinSubmit:hover:not(:disabled) {
+  background-color: rgb(59, 130, 246);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.watchPartyJoinSubmit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.watchPartyCancelBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(161 161 170);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.watchPartyCancelBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgb(244 244 245);
+}
+
 .watchPartyActionBtn {
   display: flex;
   height: 2.25rem;

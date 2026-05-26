@@ -2,32 +2,28 @@ export interface ProfileIcon {
   id: string
   label: string
   url: string
-  category: "spydercast" | "anime" | "hero"
+  category: "aot" | "jjk" | "onepiece" | "drstone"
 }
 
-export const DEFAULT_PROFILE_ICON_ID = "sc-logo"
+export const DEFAULT_PROFILE_ICON_ID = "aot-eren"
 
 export const PROFILE_ICONS: ProfileIcon[] = [
-  { id: "sc-logo", label: "SpyderCast", url: "/icon.png", category: "spydercast" },
-  { id: "cr-puck", label: "Puck", url: "https://static.crunchyroll.com/assets/avatar/170x170/0011-puck.png", category: "anime" },
-  { id: "cr-emilia", label: "Emilia", url: "https://static.crunchyroll.com/assets/avatar/170x170/0013-emilia.png", category: "anime" },
-  { id: "cr-boruto", label: "Boruto", url: "https://static.crunchyroll.com/assets/avatar/170x170/0024-boruto.png", category: "anime" },
-  { id: "cr-sarada", label: "Sarada", url: "https://static.crunchyroll.com/assets/avatar/170x170/0025-sarada.png", category: "anime" },
-  { id: "cr-legoshi", label: "Legoshi", url: "https://static.crunchyroll.com/assets/avatar/170x170/0048-legoshi.png", category: "anime" },
-  { id: "cr-senku", label: "Senku", url: "https://static.crunchyroll.com/assets/avatar/170x170/0060-senku.png", category: "anime" },
-  { id: "cr-tanjiro", label: "Tanjiro", url: "https://static.crunchyroll.com/assets/avatar/170x170/0058-tanjiro.png", category: "anime" },
-  { id: "cr-nezuko", label: "Nezuko", url: "https://static.crunchyroll.com/assets/avatar/170x170/0059-nezuko.png", category: "anime" },
-  { id: "cr-goku", label: "Goku", url: "https://static.crunchyroll.com/assets/avatar/170x170/0001-goku.png", category: "hero" },
-  { id: "cr-luffy", label: "Luffy", url: "https://static.crunchyroll.com/assets/avatar/170x170/0002-luffy.png", category: "hero" },
-  { id: "cr-naruto", label: "Naruto", url: "https://static.crunchyroll.com/assets/avatar/170x170/0003-naruto.png", category: "hero" },
-  { id: "cr-sasuke", label: "Sasuke", url: "https://static.crunchyroll.com/assets/avatar/170x170/0004-sasuke.png", category: "hero" },
-  { id: "cr-ichigo", label: "Ichigo", url: "https://static.crunchyroll.com/assets/avatar/170x170/0005-ichigo.png", category: "hero" },
-  { id: "cr-edward", label: "Edward", url: "https://static.crunchyroll.com/assets/avatar/170x170/0006-edward.png", category: "hero" },
-  { id: "cr-alphonse", label: "Alphonse", url: "https://static.crunchyroll.com/assets/avatar/170x170/0007-alphonse.png", category: "hero" },
-  { id: "cr-eren", label: "Eren", url: "https://static.crunchyroll.com/assets/avatar/170x170/0008-eren.png", category: "hero" },
-  { id: "cr-mikasa", label: "Mikasa", url: "https://static.crunchyroll.com/assets/avatar/170x170/0009-mikasa.png", category: "hero" },
-  { id: "cr-levi", label: "Levi", url: "https://static.crunchyroll.com/assets/avatar/170x170/0010-levi.png", category: "hero" },
-  { id: "cr-deku", label: "Deku", url: "https://static.crunchyroll.com/assets/avatar/170x170/0012-deku.png", category: "hero" },
+  { id: "aot-eren", label: "Eren", url: "https://static.crunchyroll.com/assets/avatar/170x170/aot_fc_eren-avatar.png", category: "aot" },
+  { id: "aot-mikasa", label: "Mikasa", url: "https://static.crunchyroll.com/assets/avatar/170x170/aot_fc_mikasa-avatar.png", category: "aot" },
+  { id: "aot-armin", label: "Armin", url: "https://static.crunchyroll.com/assets/avatar/170x170/aot_fc_armin-avatar.png", category: "aot" },
+  { id: "aot-levi", label: "Levi", url: "https://static.crunchyroll.com/assets/avatar/170x170/aot_fc_levi-avatar.png", category: "aot" },
+  { id: "jjk-gojo", label: "Gojo", url: "https://static.crunchyroll.com/assets/avatar/170x170/1044-jujutsu-kaisen-satoru-gojo.png", category: "jjk" },
+  { id: "jjk-yuji", label: "Yuji", url: "https://static.crunchyroll.com/assets/avatar/170x170/1041-jujutsu-kaisen-yuji-itadori.png", category: "jjk" },
+  { id: "jjk-megumi", label: "Megumi", url: "https://static.crunchyroll.com/assets/avatar/170x170/1042-jujutsu-kaisen-megumi-fushigoro.png", category: "jjk" },
+  { id: "jjk-sukuna", label: "Sukuna", url: "https://static.crunchyroll.com/assets/avatar/170x170/1045-jujutsu-kaisen-ryomen-sukuna.png", category: "jjk" },
+  { id: "op-luffy", label: "Luffy", url: "https://static.crunchyroll.com/assets/avatar/170x170/egghead-luffy.png", category: "onepiece" },
+  { id: "op-nami", label: "Nami", url: "https://static.crunchyroll.com/assets/avatar/170x170/egghead-nami.png", category: "onepiece" },
+  { id: "op-sanji", label: "Sanji", url: "https://static.crunchyroll.com/assets/avatar/170x170/egghead-sanji.png", category: "onepiece" },
+  { id: "op-zoro", label: "Zoro", url: "https://static.crunchyroll.com/assets/avatar/170x170/egghead-zoro.png", category: "onepiece" },
+  { id: "ds-senku", label: "Senku", url: "https://static.crunchyroll.com/assets/avatar/170x170/01_senku_avatar.png", category: "drstone" },
+  { id: "ds-xeno", label: "Xeno", url: "https://static.crunchyroll.com/assets/avatar/170x170/02_xeno_avatar.png", category: "drstone" },
+  { id: "ds-gen", label: "Gen", url: "https://static.crunchyroll.com/assets/avatar/170x170/03_gen_avatar.png", category: "drstone" },
+  { id: "ds-chrome", label: "Chrome", url: "https://static.crunchyroll.com/assets/avatar/170x170/05_chrome_avatar.png", category: "drstone" },
 ]
 
 export const PROFILE_NAME_COLORS = [

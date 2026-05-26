@@ -219,3 +219,52 @@
 .paginationText {
   @apply text-sm text-muted-foreground;
 }
+
+/* Admin Sources Panel Styles */
+.admin-sources-section {
+  @apply mb-8;
+}
+
+.admin-sources-section-title {
+  @apply mb-6 text-xl font-bold text-foreground;
+}
+
+.admin-sources-category {
+  @apply mb-6;
+}
+
+.admin-sources-category-title {
+  @apply mb-4 text-sm font-semibold uppercase tracking-wider text-amber-400;
+}
+
+.admin-sources-grid {
+  @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.admin-sources-player-card {
+  @apply rounded-xl border border-white/5 bg-card p-4;
+}
+
+.admin-sources-player-header {
+  @apply mb-3 flex items-center justify-between gap-2;
+}
+
+.admin-sources-player-label {
+  @apply text-base font-bold text-foreground;
+}
+
+.admin-sources-player-type {
+  @apply rounded-full bg-white/5 px-2 py-0.5 text-xs font-mono text-muted-foreground;
+}
+
+.admin-sources-player-desc {
+  @apply mb-3 text-sm text-muted-foreground;
+}
+
+.admin-sources-player-footer {
+  @apply flex items-center justify-between;
+}
+
+.admin-sources-player-id {
+  @apply text-xs font-mono text-muted-foreground;
+}

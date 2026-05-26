@@ -8,12 +8,14 @@ interface ExternalIframePlayerProps {
   url: string
   title: string
   loadingLabel?: string
+  bypassSandbox?: boolean
 }
 
 export function ExternalIframePlayer({
   url,
   title,
   loadingLabel = "Chargement de la source...",
+  bypassSandbox = false,
 }: ExternalIframePlayerProps) {
   const [mounted, setMounted] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
@@ -79,6 +81,7 @@ export function ExternalIframePlayer({
         allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
+        {...(!bypassSandbox && { sandbox: "allow-scripts allow-same-origin allow-forms allow-popups allow-presentation" })}
         onLoad={() => setIsLoading(false)}
         onError={() => {
           setFailed(true)

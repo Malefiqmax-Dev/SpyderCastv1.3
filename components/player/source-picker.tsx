@@ -1,6 +1,7 @@
 "use client"
 
-import { Cloud, Globe, Sparkles, Wind, Zap } from "lucide-react"
+import { useState } from "react"
+import { Cloud, Globe, Sparkles, Wind, Zap, Play, Film, Tv, Monitor, Radio, Cast, Video, Layers, Star } from "lucide-react"
 import {
   PLAYER_SOURCES,
   type PlayerSource,
@@ -15,7 +16,19 @@ const SOURCE_ICONS: Record<PlayerSourceId, typeof Cloud> = {
   feu: Sparkles,
   air: Wind,
   eclair: Zap,
+  peachify: Play,
+  anyembed: Film,
+  vidsrcwtf: Tv,
+  vidsrcin: Monitor,
+  nontongo: Radio,
+  videasy: Cast,
+  oneembed: Video,
+  vidking: Play,
+  twoembed: Layers,
+  superflix: Star,
 }
+
+type LanguageTab = "VF" | "VOSTFR" | "Multi"
 
 interface SourcePickerProps {
   selectedId: PlayerSourceId
@@ -24,6 +37,10 @@ interface SourcePickerProps {
 }
 
 export function SourcePicker({ selectedId, onSelect, compact = false }: SourcePickerProps) {
+  const [activeTab, setActiveTab] = useState<LanguageTab>("VF")
+
+  const filteredSources = PLAYER_SOURCES.filter((source) => source.lang === activeTab)
+
   return (
     <div className={`source-picker ${compact ? "source-picker-compact" : ""}`}>
       <div className="source-picker-header">
@@ -31,8 +48,32 @@ export function SourcePicker({ selectedId, onSelect, compact = false }: SourcePi
         <p className="source-picker-subtitle">Choisissez un lecteur</p>
       </div>
 
+      <div className="source-picker-tabs">
+        <button
+          type="button"
+          onClick={() => setActiveTab("VF")}
+          className={`source-picker-tab ${activeTab === "VF" ? "source-picker-tab-active" : ""}`}
+        >
+          VF
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveTab("VOSTFR")}
+          className={`source-picker-tab ${activeTab === "VOSTFR" ? "source-picker-tab-active" : ""}`}
+        >
+          VOSTFR
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveTab("Multi")}
+          className={`source-picker-tab ${activeTab === "Multi" ? "source-picker-tab-active" : ""}`}
+        >
+          Multi
+        </button>
+      </div>
+
       <div className="source-picker-list">
-        {PLAYER_SOURCES.map((source) => (
+        {filteredSources.map((source) => (
           <SourcePickerItem
             key={source.id}
             source={source}

@@ -25,6 +25,14 @@ const FILTERS: { id: CalendarFilter; label: string; icon: typeof Clapperboard }[
   { id: "tv", label: "Series", icon: Tv },
 ]
 
+const DAY_OPTIONS = [
+  { value: "", label: "Tous les jours" },
+  ...Array.from({ length: 31 }, (_, i) => ({
+    value: String(i + 1).padStart(2, "0"),
+    label: String(i + 1),
+  })),
+]
+
 const MONTH_OPTIONS = [
   { value: "01", label: "Janvier" },
   { value: "02", label: "Fevrier" },
@@ -49,6 +57,7 @@ export default function CalendarPage({ initialData }: CalendarPageProps) {
   const [data, setData] = useState<CalendarMonthData>(initialData)
   const [filter, setFilter] = useState<CalendarFilter>("all")
   const [monthKey, setMonthKey] = useState(initialData.month)
+  const [selectedDay, setSelectedDay] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const skipInitialFetch = useRef(true)
@@ -104,6 +113,10 @@ export default function CalendarPage({ initialData }: CalendarPageProps) {
     setMonthKey(`${value}-${selectedMonth}`)
   }
 
+  function handleDayChange(value: string) {
+    setSelectedDay(value)
+  }
+
   return (
     <main className="calendar-main">
       <div className="calendar-wrapper">
@@ -131,6 +144,19 @@ export default function CalendarPage({ initialData }: CalendarPageProps) {
             </button>
 
             <div className="calendar-period-selects">
+              <select
+                value={selectedDay}
+                onChange={(e) => handleDayChange(e.target.value)}
+                className="calendar-select"
+                aria-label="Choisir le jour"
+              >
+                {DAY_OPTIONS.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+
               <select
                 value={selectedMonth}
                 onChange={(e) => handleMonthChange(e.target.value)}
@@ -212,7 +238,9 @@ export default function CalendarPage({ initialData }: CalendarPageProps) {
 
         {!loading && !error && data.days.length > 0 && (
           <div className="calendar-days">
-            {data.days.map((day) => (
+            {data.days
+              .filter((day) => !selectedDay || day.date.slice(8, 10) === selectedDay)
+              .map((day) => (
               <section
                 key={day.date}
                 className={`calendar-day ${day.isToday ? "calendar-day-today" : ""}`}

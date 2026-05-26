@@ -1,8 +1,9 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react"
-import { Link, Trash2, Plus, ChevronLeft, ChevronRight, Loader2, Search } from "lucide-react"
+import { Link, Trash2, Plus, ChevronLeft, ChevronRight, Loader2, Search, ExternalLink } from "lucide-react"
 import { toast } from "sonner"
+import { PLAYER_SOURCES } from "@/lib/player-sources"
 
 interface AdminSourcesPanelProps {
   enabled: boolean
@@ -37,6 +38,11 @@ export function AdminSourcesPanel({ enabled }: AdminSourcesPanelProps) {
     language: "",
     size: "",
   })
+
+  // Group player sources by language
+  const vfSources = PLAYER_SOURCES.filter(s => s.lang === "VF")
+  const vostfrSources = PLAYER_SOURCES.filter(s => s.lang === "VOSTFR")
+  const multiSources = PLAYER_SOURCES.filter(s => s.lang === "Multi")
 
   const loadSources = useCallback(async () => {
     if (!enabled) return
@@ -121,7 +127,72 @@ export function AdminSourcesPanel({ enabled }: AdminSourcesPanelProps) {
 
   return (
     <div className="admin-sources-panel">
-      <div className="admin-sources-header">
+      {/* Player Sources Section */}
+      <div className="admin-sources-section">
+        <h2 className="admin-sources-section-title">Lecteurs Player</h2>
+        
+        {/* VF Sources */}
+        <div className="admin-sources-category">
+          <h3 className="admin-sources-category-title">VF</h3>
+          <div className="admin-sources-grid">
+            {vfSources.map((source) => (
+              <div key={source.id} className="admin-sources-player-card">
+                <div className="admin-sources-player-header">
+                  <h4 className="admin-sources-player-label">{source.label}</h4>
+                  <span className="admin-sources-player-type">{source.type}</span>
+                </div>
+                <p className="admin-sources-player-desc">{source.description}</p>
+                <div className="admin-sources-player-footer">
+                  <span className="admin-sources-player-id">ID: {source.id}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* VOSTFR Sources */}
+        <div className="admin-sources-category">
+          <h3 className="admin-sources-category-title">VOSTFR</h3>
+          <div className="admin-sources-grid">
+            {vostfrSources.map((source) => (
+              <div key={source.id} className="admin-sources-player-card">
+                <div className="admin-sources-player-header">
+                  <h4 className="admin-sources-player-label">{source.label}</h4>
+                  <span className="admin-sources-player-type">{source.type}</span>
+                </div>
+                <p className="admin-sources-player-desc">{source.description}</p>
+                <div className="admin-sources-player-footer">
+                  <span className="admin-sources-player-id">ID: {source.id}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Multi Sources */}
+        <div className="admin-sources-category">
+          <h3 className="admin-sources-category-title">Multi</h3>
+          <div className="admin-sources-grid">
+            {multiSources.map((source) => (
+              <div key={source.id} className="admin-sources-player-card">
+                <div className="admin-sources-player-header">
+                  <h4 className="admin-sources-player-label">{source.label}</h4>
+                  <span className="admin-sources-player-type">{source.type}</span>
+                </div>
+                <p className="admin-sources-player-desc">{source.description}</p>
+                <div className="admin-sources-player-footer">
+                  <span className="admin-sources-player-id">ID: {source.id}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Database Sources Section */}
+      <div className="admin-sources-section">
+        <h2 className="admin-sources-section-title">Sources Base de Données</h2>
+        <div className="admin-sources-header">
         <button
           type="button"
           onClick={() => setShowAddForm(true)}
@@ -307,6 +378,7 @@ export function AdminSourcesPanel({ enabled }: AdminSourcesPanelProps) {
           )}
         </>
       )}
+      </div>
     </div>
   )
 }
