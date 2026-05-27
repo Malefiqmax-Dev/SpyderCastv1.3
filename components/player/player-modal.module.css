@@ -130,3 +130,136 @@
 .loadingText {
   @apply text-xs font-medium uppercase tracking-widest text-amber-500;
 }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .root {
+    @apply p-2;
+  }
+
+  .shell {
+    @apply max-h-[100vh] rounded-xl;
+  }
+
+  .header {
+    @apply px-3 py-2;
+  }
+
+  .title {
+    @apply text-xs;
+  }
+
+  .activeSourceBadge {
+    @apply px-2 py-0.5 text-[9px];
+  }
+
+  .closeBtn {
+    @apply p-1.5;
+  }
+
+  .iconMd {
+    @apply h-4 w-4;
+  }
+
+  .verifiedLayout {
+    @apply grid-rows-[1fr_auto];
+  }
+
+  .sourcesAside {
+    @apply border-t border-white/10 p-3;
+  }
+
+  .warningBanner {
+    @apply px-3 py-1.5 text-[10px];
+  }
+
+  .unavailableState {
+    @apply p-4 text-xs;
+  }
+
+  .unavailableIcon {
+    @apply h-8 w-8;
+  }
+
+  .verifyTitle {
+    @apply text-xl;
+  }
+
+  .verifyText {
+    @apply text-sm;
+  }
+
+  .shieldIcon {
+    @apply h-12 w-12;
+  }
+}
+
+@media (max-width: 480px) {
+  .root {
+    @apply p-1;
+  }
+
+  .shell {
+    @apply max-h-[100dvh];
+  }
+
+  .header {
+    @apply px-2 py-1.5;
+  }
+
+  .title {
+    @apply text-[11px];
+  }
+
+  .activeSourceBadge {
+    @apply px-1.5 py-0.5 text-[8px];
+  }
+
+  .closeBtn {
+    @apply p-1;
+  }
+
+  .iconMd {
+    @apply h-3.5 w-3.5;
+  }
+
+  .sourcesAside {
+    @apply p-2;
+  }
+
+  .warningBanner {
+    @apply px-2 py-1;
+  }
+
+  .unavailableState {
+    @apply p-3 text-[11px];
+  }
+
+  .unavailableIcon {
+    @apply h-6 w-6;
+  }
+
+  .verifyTitle {
+    @apply text-lg;
+  }
+
+  .verifyText {
+    @apply text-xs;
+  }
+
+  .shieldIcon {
+    @apply h-10 w-10;
+  }
+
+  .errorBox {
+    @apply p-3 text-[10px];
+  }
+
+  .loadingIcon {
+    @apply h-6 w-6;
+  }
+
+  .loadingText {
+    @apply text-[10px];
+  }
+}

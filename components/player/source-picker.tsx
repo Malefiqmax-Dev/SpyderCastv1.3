@@ -14,18 +14,17 @@ const SOURCE_ICONS: Record<PlayerSourceId, typeof Cloud> = {
   eau: Cloud,
   terre: Globe,
   feu: Sparkles,
-  air: Wind,
   eclair: Zap,
   peachify: Play,
   anyembed: Film,
   vidsrcwtf: Tv,
-  vidsrcin: Monitor,
   nontongo: Radio,
   videasy: Cast,
   oneembed: Video,
   vidking: Play,
   twoembed: Layers,
   superflix: Star,
+  dcp: Cloud,
 }
 
 type LanguageTab = "VF" | "VOSTFR" | "Multi"

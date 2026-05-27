@@ -125,3 +125,43 @@
 .scrollButtonIcon {
   @apply h-5 w-5;
 }
+
+@media (max-width: 768px) {
+  .root {
+    @apply h-[70vh];
+  }
+
+  .content {
+    @apply px-4 pb-8;
+  }
+
+  .logoWrapper {
+    @apply h-16 w-[180px];
+  }
+
+  .overview {
+    @apply text-xs;
+  }
+
+  .indicators {
+    @apply bottom-8 left-4;
+  }
+
+  .scrollButton {
+    @apply hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .root {
+    @apply h-[60vh];
+  }
+
+  .content {
+    @apply px-3 pb-6;
+  }
+
+  .logoWrapper {
+    @apply h-14 w-[160px];
+  }
+}

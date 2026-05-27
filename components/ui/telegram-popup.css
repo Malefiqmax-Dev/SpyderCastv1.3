@@ -119,26 +119,88 @@
 
 @media (max-width: 480px) {
   .telegram-popup-overlay {
-    bottom: 10px;
-    right: 10px;
-    left: 10px;
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
   }
 
   .telegram-popup {
-    padding: 20px;
+    padding: 16px;
     max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .telegram-popup-close {
+    width: 28px;
+    height: 28px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .telegram-popup-close svg {
+    width: 16px;
+    height: 16px;
   }
 
   .telegram-popup-title {
     font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .telegram-popup-text {
     font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.4;
   }
 
   .telegram-icon {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .telegram-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .telegram-popup-button {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .telegram-popup-overlay {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+  }
+
+  .telegram-popup {
+    padding: 14px;
+  }
+
+  .telegram-popup-title {
+    font-size: 15px;
+  }
+
+  .telegram-popup-text {
+    font-size: 12px;
+  }
+
+  .telegram-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .telegram-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .telegram-popup-button {
+    padding: 9px 20px;
+    font-size: 13px;
   }
 }

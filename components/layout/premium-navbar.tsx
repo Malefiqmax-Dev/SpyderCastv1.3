@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { Search, X, User, LogOut, Shield, Settings, Menu } from "lucide-react"
+import { Search, X, User, LogOut, Shield, Settings, Menu, Home, Film, Tv, Calendar, List, MessageSquare, Radio } from "lucide-react"
 import { useAuth } from "@/components/auth/auth-context"
 import { AuthModal } from "@/components/auth/auth-modal"
 import { ProfileSettingsModal } from "@/components/auth/profile-settings-modal"
@@ -12,13 +12,13 @@ import { SearchResultsDropdown } from "@/components/search/search-results-dropdo
 import "./premium-navbar.css"
 
 const NAV_ITEMS = [
-  { name: "Accueil", href: "/" },
-  { name: "Film", href: "/movies" },
-  { name: "Séries", href: "/tv" },
-  { name: "Calendrier", href: "/calendar" },
-  { name: "Genres", href: "/genres" },
-  { name: "Demandes", href: "/requests" },
-  { name: "Live TV", href: "/live-sport" },
+  { name: "Accueil", href: "/", icon: Home },
+  { name: "Film", href: "/movies", icon: Film },
+  { name: "Séries", href: "/tv", icon: Tv },
+  { name: "Calendrier", href: "/calendar", icon: Calendar },
+  { name: "Genres", href: "/genres", icon: List },
+  { name: "Demandes", href: "/requests", icon: MessageSquare },
+  { name: "Live TV", href: "/live-sport", icon: Radio },
 ]
 
 export function PremiumNavbar() {
@@ -200,6 +200,7 @@ export function PremiumNavbar() {
               )}
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname === item.href
+                const Icon = item.icon
                 return (
                   <Link
                     key={item.href}
@@ -207,7 +208,8 @@ export function PremiumNavbar() {
                     onClick={() => setMenuOpen(false)}
                     className={`premium-navbar-mobile-nav-link ${isActive ? "premium-navbar-mobile-nav-link-active" : "premium-navbar-mobile-nav-link-inactive"}`}
                   >
-                    {item.name}
+                    <Icon className="premium-navbar-mobile-nav-icon" />
+                    <span>{item.name}</span>
                     {isActive && <div className="premium-navbar-mobile-nav-dot" />}
                   </Link>
                 )

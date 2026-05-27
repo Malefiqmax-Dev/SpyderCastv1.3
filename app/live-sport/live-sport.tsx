@@ -362,7 +362,15 @@ function SportEventCard({
       <div className="live-sport-event-body">
         <div className="live-sport-event-teams">
           {event.home_badge && (
-            <img src={event.home_badge} alt="" className="live-sport-team-logo" loading="lazy" />
+            <img 
+              src={event.home_badge} 
+              alt="" 
+              className="live-sport-team-logo" 
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none"
+              }}
+            />
           )}
           <div className="live-sport-event-info">
             <p className="live-sport-event-title">{event.title}</p>
@@ -374,7 +382,15 @@ function SportEventCard({
             {event.league && <p className="live-sport-event-league">{event.league}</p>}
           </div>
           {event.away_badge && (
-            <img src={event.away_badge} alt="" className="live-sport-team-logo" loading="lazy" />
+            <img 
+              src={event.away_badge} 
+              alt="" 
+              className="live-sport-team-logo" 
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none"
+              }}
+            />
           )}
         </div>
         {event.time && <p className="live-sport-event-time">{event.time}</p>}
@@ -407,7 +423,15 @@ function FootballMatchCard({
       <div className="live-sport-football-row">
         <div className="live-sport-football-team">
           {match.home_logo && (
-            <img src={match.home_logo} alt="" className="live-sport-team-logo" loading="lazy" />
+            <img 
+              src={match.home_logo} 
+              alt="" 
+              className="live-sport-team-logo" 
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none"
+              }}
+            />
           )}
           <span>{match.home ?? "—"}</span>
         </div>
@@ -421,7 +445,15 @@ function FootballMatchCard({
         <div className="live-sport-football-team live-sport-football-team-away">
           <span>{match.away ?? "—"}</span>
           {match.away_logo && (
-            <img src={match.away_logo} alt="" className="live-sport-team-logo" loading="lazy" />
+            <img 
+              src={match.away_logo} 
+              alt="" 
+              className="live-sport-team-logo" 
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none"
+              }}
+            />
           )}
         </div>
       </div>
@@ -463,7 +495,15 @@ function BossTvMatchCard({
       <div className="live-sport-football-row">
         <div className="live-sport-football-team">
           {match.home_logo && (
-            <img src={match.home_logo} alt="" className="live-sport-team-logo" loading="lazy" />
+            <img 
+              src={match.home_logo} 
+              alt="" 
+              className="live-sport-team-logo" 
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none"
+              }}
+            />
           )}
           <span>{match.home}</span>
         </div>
@@ -475,7 +515,15 @@ function BossTvMatchCard({
         <div className="live-sport-football-team live-sport-football-team-away">
           <span>{match.away}</span>
           {match.away_logo && (
-            <img src={match.away_logo} alt="" className="live-sport-team-logo" loading="lazy" />
+            <img 
+              src={match.away_logo} 
+              alt="" 
+              className="live-sport-team-logo" 
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none"
+              }}
+            />
           )}
         </div>
       </div>
