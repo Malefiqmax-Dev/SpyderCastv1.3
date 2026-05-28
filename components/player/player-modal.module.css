@@ -263,3 +263,48 @@
     @apply text-[10px];
   }
 }
+
+/* Mobile sizing adjustments only - no API or source changes */
+@media (max-width: 768px) {
+  .root {
+    @apply p-2;
+  }
+
+  .shell {
+    @apply max-h-[100vh] max-h-[100dvh] rounded-xl;
+  }
+
+  .verifiedLayout {
+    @apply grid-cols-1 grid-rows-[1fr_auto];
+  }
+
+  .mediaColumn {
+    @apply flex-1;
+  }
+
+  .videoWrapper {
+    @apply min-h-[40vh];
+  }
+
+  .sourcesAside {
+    @apply border-l-0 border-t border-white/10 max-h-[40vh] overflow-y-auto p-3;
+  }
+}
+
+@media (max-width: 480px) {
+  .root {
+    @apply p-1;
+  }
+
+  .shell {
+    @apply max-h-[100dvh] rounded-lg;
+  }
+
+  .videoWrapper {
+    @apply min-h-[35vh];
+  }
+
+  .sourcesAside {
+    @apply max-h-[50vh] p-2;
+  }
+}
