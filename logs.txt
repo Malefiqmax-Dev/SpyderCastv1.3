@@ -1,0 +1,227 @@
+[TAILING] Tailing last 100 lines for [0] process (change the value with --lines option)
+/root/.pm2/logs/spydercast-error.log last 100 lines:
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+0|spyderca | Error: Failed to find Server Action "x". This request might be from an older or newer deployment.
+0|spyderca | Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+0|spyderca |     at ignore-listed frames
+
+/root/.pm2/logs/spydercast-out.log last 100 lines:
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2671?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2667?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2654?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | 
+0|spyderca | > my-project@0.1.0 start
+0|spyderca | > next start
+0|spyderca | 
+0|spyderca | ▲ Next.js 16.2.4
+0|spyderca | - Local:         http://localhost:3000
+0|spyderca | - Network:       http://80.96.58.137:3000
+0|spyderca | ✓ Ready in 344ms
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1304313?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1304313?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/981329?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1341284?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/981322?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1523234?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/609687?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2417?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/791570?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2671?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2667?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2654?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | 
+0|spyderca | > my-project@0.1.0 start
+0|spyderca | > next start
+0|spyderca | 
+0|spyderca | ▲ Next.js 16.2.4
+0|spyderca | - Local:         http://localhost:3000
+0|spyderca | - Network:       http://80.96.58.137:3000
+0|spyderca | ✓ Ready in 258ms
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/5922?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/5922?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | 
+0|spyderca | > my-project@0.1.0 start
+0|spyderca | > next start
+0|spyderca | 
+0|spyderca | ▲ Next.js 16.2.4
+0|spyderca | - Local:         http://localhost:3000
+0|spyderca | - Network:       http://80.96.58.137:3000
+0|spyderca | ✓ Ready in 406ms
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/tv/132?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/tv/132?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | 
+0|spyderca | > my-project@0.1.0 start
+0|spyderca | > next start
+0|spyderca | 
+0|spyderca | ▲ Next.js 16.2.4
+0|spyderca | - Local:         http://localhost:3000
+0|spyderca | - Network:       http://80.96.58.137:3000
+0|spyderca | ✓ Ready in 300ms
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1304313?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1304313?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1341284?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/981329?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/981322?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1523234?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/609687?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2417?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/791570?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2671?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2667?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2654?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/tv/119317?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/tv/119317?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | 
+0|spyderca | > my-project@0.1.0 start
+0|spyderca | > next start
+0|spyderca | 
+0|spyderca | ▲ Next.js 16.2.4
+0|spyderca | - Local:         http://localhost:3000
+0|spyderca | - Network:       http://80.96.58.137:3000
+0|spyderca | ✓ Ready in 325ms
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1304313?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1304313?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/609687?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2417?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/791570?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2671?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2667?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/2654?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | 
+0|spyderca | > my-project@0.1.0 start
+0|spyderca | > next start
+0|spyderca | 
+0|spyderca | ▲ Next.js 16.2.4
+0|spyderca | - Local:         http://localhost:3000
+0|spyderca | - Network:       http://80.96.58.137:3000
+0|spyderca | ✓ Ready in 503ms
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1582770?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1007757?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/687163?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1339713?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1226863?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1439930?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1380291?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/movie/1304313?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/tv/220102?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/tv/220102?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spyderca | TMDB Request URL: https://api.themoviedb.org/3/tv/220102?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/132?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/56484?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/56401?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/231394?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/231462?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/160?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/119584?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/184?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/27453?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/56021?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/549?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/79744?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/308014?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/2734?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/85552?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/273240?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/124364?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/76479?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/224941?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/movie/1228710?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/262878?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos
+0|spydercast  | TMDB Request URL: https://api.themoviedb.org/3/tv/262878?language=fr-FR&append_to_response=credits%2Csimilar%2Cvideos

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
+import { fetchFastFluxSource } from "@/lib/fastflux"
 import { prisma } from "@/lib/db"
 
 const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY || "0x4AAAAAACoR7Q28Q4Qkdq_R"
@@ -76,6 +77,15 @@ export async function POST(req: NextRequest) {
         }
       });
       url = series?.episodes[0]?.url || null;
+    }
+
+    if (!url) {
+      console.log("[API Player] Source not found in DB, trying FastFlux fallback...");
+      url = await fetchFastFluxSource(numericTmdbId, mediaType as "movie" | "tv", season, episode);
+      if (url) {
+        contentType = "hls";
+        console.log("[API Player] FastFlux fallback success:", url);
+      }
     }
 
     if (!url) {

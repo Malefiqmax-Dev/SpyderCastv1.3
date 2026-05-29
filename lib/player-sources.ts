@@ -18,7 +18,7 @@ export const PLAYER_SOURCES: PlayerSource[] = [
     label: "VF 1",
     lang: "VF",
     type: "native",
-    description: "Flux local haute qualité",
+    description: "Flux haute qualité (Local + FastFlux)",
   },
   {
     id: "terre",
